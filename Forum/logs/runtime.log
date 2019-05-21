@@ -1,0 +1,33 @@
+2019-05-21 23:11:27.638  INFO 1476 --- [main] com.forum.demo.ForumApplication          : Starting ForumApplication on FZUKingDuck with PID 1476 (F:\CODE\Forum\BackEnd\Forum\target\classes started by 叫猪学猪叫 in F:\CODE\Forum\BackEnd\Forum)
+2019-05-21 23:11:27.642  INFO 1476 --- [main] com.forum.demo.ForumApplication          : No active profile set, falling back to default profiles: default
+2019-05-21 23:11:28.402  INFO 1476 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-05-21 23:11:28.403  INFO 1476 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-05-21 23:11:28.470  INFO 1476 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58ms. Found 1 repository interfaces.
+2019-05-21 23:11:28.495  INFO 1476 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-05-21 23:11:28.497  INFO 1476 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-05-21 23:11:28.513  INFO 1476 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.CustomerDao.
+2019-05-21 23:11:28.513  INFO 1476 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9ms. Found 0 repository interfaces.
+2019-05-21 23:11:28.977  INFO 1476 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$921b2971] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-21 23:11:29.360  INFO 1476 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-21 23:11:29.380  INFO 1476 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-21 23:11:29.381  INFO 1476 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-05-21 23:11:29.387  INFO 1476 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2019-05-21 23:11:29.387  INFO 1476 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-05-21 23:11:29.387  INFO 1476 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-05-21 23:11:29.391  INFO 1476 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2019-05-21 23:11:29.548  INFO 1476 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-21 23:11:29.549  INFO 1476 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1864 ms
+2019-05-21 23:11:29.839  INFO 1476 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-05-21 23:11:29.890  INFO 1476 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2019-05-21 23:11:29.891  INFO 1476 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-05-21 23:11:30.046  INFO 1476 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-05-21 23:11:30.201  INFO 1476 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-05-21 23:11:30.359  INFO 1476 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-05-21 23:11:30.374  INFO 1476 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-05-21 23:11:30.966  INFO 1476 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-05-21 23:11:31.766  INFO 1476 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-21 23:11:31.798  WARN 1476 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-05-21 23:11:32.068  INFO 1476 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-05-21 23:11:32.070  INFO 1476 --- [main] com.forum.demo.ForumApplication          : Started ForumApplication in 4.84 seconds (JVM running for 6.681)
