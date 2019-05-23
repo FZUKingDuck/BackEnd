@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>测试</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="constAPI.js"></script>
+</head>
+<body>
+	<div id="testDiv">
+		<script type="text/javascript">
+			
+			var url ="/login"
+			var data = {
+				"name":"13067272181",
+				"pwd":"123456"
+			}
+			globalPost(url,data,function(res){
+				console.log(res);
+			});
+
+		</script>		
+	</div>
+</body>
+</html>

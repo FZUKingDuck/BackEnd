@@ -37,20 +37,17 @@ public class LoginAspect {
     //登录检测
     @Around(value = "loginPointCut()")
     public Object checkLogin(ProceedingJoinPoint joinPoint) throws Throwable {
-        logger.info("is in it");
+        logger.info("check login");
         //获取request的attribute
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
-        //获取用户的session
-        HttpSession session = request.getSession();
-
-        String username = (String)session.getAttribute("loginName");
+        String username = request.getRemoteHost();
 
         String key = "loginUser:"+username;
         System.out.println(username);
         String value = redisOperator.get(key);
 
-        if(value==null){
+        if(null==value){
             return JsonResult.fail();
         }
         else {
