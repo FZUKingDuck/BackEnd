@@ -6,4 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CustomDao extends JpaRepository<CustomEntity,String> {
     public CustomEntity findCustomEntityByName(String name);
+
 }

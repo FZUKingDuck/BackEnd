@@ -1,5 +1,7 @@
 package com.forum.demo.Entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.sql.Date;
 import java.util.Collection;
@@ -118,6 +120,7 @@ public class CustomEntity {
         return Objects.hash(id, name, password, operator, creattime, updatetime, remark);
     }
 
+    @JsonBackReference
     @OneToMany(mappedBy = "customByTeacher")
     public Collection<ClassInfoEntity> getClassInfosById() {
         return classInfosById;
@@ -127,6 +130,7 @@ public class CustomEntity {
         this.classInfosById = classInfosById;
     }
 
+    @JsonBackReference
     @OneToMany(mappedBy = "customByUser")
     public Collection<ClassMemberEntity> getClassMembersById() {
         return classMembersById;
@@ -136,6 +140,7 @@ public class CustomEntity {
         this.classMembersById = classMembersById;
     }
 
+    @JsonBackReference
     @OneToMany(mappedBy = "customByUser")
     public Collection<ExamInfoEntity> getExamInfosById() {
         return examInfosById;
@@ -145,6 +150,7 @@ public class CustomEntity {
         this.examInfosById = examInfosById;
     }
 
+    @JsonBackReference
     @OneToMany(mappedBy = "customByUser")
     public Collection<FriendEntity> getFriendsById() {
         return friendsById;
@@ -154,6 +160,7 @@ public class CustomEntity {
         this.friendsById = friendsById;
     }
 
+    @JsonBackReference
     @OneToMany(mappedBy = "customByFriends")
     public Collection<FriendEntity> getFriendsById_0() {
         return friendsById_0;
@@ -163,6 +170,7 @@ public class CustomEntity {
         this.friendsById_0 = friendsById_0;
     }
 
+    @JsonBackReference
     @OneToMany(mappedBy = "customByUser")
     public Collection<ReplyEntity> getRepliesById() {
         return repliesById;
@@ -172,6 +180,7 @@ public class CustomEntity {
         this.repliesById = repliesById;
     }
 
+    @JsonBackReference
     @OneToMany(mappedBy = "customByUser")
     public Collection<TalkEntity> getTalksById() {
         return talksById;
@@ -181,6 +190,7 @@ public class CustomEntity {
         this.talksById = talksById;
     }
 
+    @JsonBackReference
     @OneToMany(mappedBy = "customByToUserid")
     public Collection<TalkEntity> getTalksById_0() {
         return talksById_0;
@@ -190,6 +200,7 @@ public class CustomEntity {
         this.talksById_0 = talksById_0;
     }
 
+    @JsonBackReference
     @OneToMany(mappedBy = "customByUser")
     public Collection<TaskEntity> getTasksById() {
         return tasksById;
@@ -199,6 +210,7 @@ public class CustomEntity {
         this.tasksById = tasksById;
     }
 
+    @JsonBackReference
     @OneToMany(mappedBy = "customByUser")
     public Collection<TaskListEntity> getTaskListsById() {
         return taskListsById;
@@ -208,6 +220,7 @@ public class CustomEntity {
         this.taskListsById = taskListsById;
     }
 
+    @JsonBackReference
     @OneToMany(mappedBy = "customByCustomid")
     public Collection<UserInfoEntity> getUserInfosById() {
         return userInfosById;
@@ -217,6 +230,7 @@ public class CustomEntity {
         this.userInfosById = userInfosById;
     }
 
+    @JsonBackReference
     @OneToMany(mappedBy = "customByUser")
     public Collection<WatchedEntity> getWatchedsById() {
         return watchedsById;
@@ -226,6 +240,7 @@ public class CustomEntity {
         this.watchedsById = watchedsById;
     }
 
+    @JsonBackReference
     @OneToMany(mappedBy = "customByWatchedUser")
     public Collection<WatchedEntity> getWatchedsById_0() {
         return watchedsById_0;
