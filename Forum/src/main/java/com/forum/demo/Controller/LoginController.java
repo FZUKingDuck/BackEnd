@@ -28,9 +28,9 @@ public class LoginController {
     RedisOperator redisOperator;
 
 
-
     //登录接口
     //name:账号,pwd:md5加密过的密码
+
     @LogPointCut
     @PostMapping(value = "/login")
     public Result login(HttpServletRequest request, @PathParam("name")String name, @PathParam("pwd")String pwd){
