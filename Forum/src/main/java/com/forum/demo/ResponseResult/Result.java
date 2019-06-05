@@ -48,12 +48,15 @@ public class Result<T> {
         this.data = null;
     }
 
+    //参数错误统一处理函数
     public void setNullFalse(){
         this.message = "参数错误";
         this.code = 400;
         this.data = null;
     }
 
+
+    //系统错误统一处理函数
     public void setSysFalse(){
         this.message = "系统错误";
         this.code = 500;

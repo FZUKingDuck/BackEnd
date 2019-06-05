@@ -53,7 +53,7 @@ public class LoginController {
             }
 
             //将数据加入缓存池
-            redisOperator.set("loginUser:"+request.getRemoteHost(), DateUtil.getIdFromDate(),1000*60*60);
+            redisOperator.set("loginUser:"+request.getRemoteHost(), customerEntity.getId(),1000*60*60);
 
             result.setOK("登录成功",true);
 

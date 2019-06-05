@@ -99,7 +99,7 @@ public class TaskController {
           if(sum<1){
               result.setFalse(201,"Money设置错误");
           }
-          
+
           //CustomEntity customEntity = cus.get();//拿表记录
           taskEntity.setUser(user);
           taskEntity.setType(type);
