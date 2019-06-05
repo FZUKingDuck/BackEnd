@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2019-05-31 20:34:01
+Date: 2019-06-05 17:49:41
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,8 +29,7 @@ CREATE TABLE `class_info` (
   `updatetime` datetime NOT NULL,
   `Remark` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_class_info_custom` (`teacher`),
-  CONSTRAINT `fk_class_info_custom` FOREIGN KEY (`teacher`) REFERENCES `custom` (`id`)
+  KEY `fk_class_info_custom` (`teacher`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -52,9 +51,7 @@ CREATE TABLE `class_member` (
   `Remark` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_class_member_class_info` (`classid`),
-  KEY `fk_class_member_custom` (`user`),
-  CONSTRAINT `fk_class_member_class_info` FOREIGN KEY (`classid`) REFERENCES `class_info` (`id`),
-  CONSTRAINT `fk_class_member_custom` FOREIGN KEY (`user`) REFERENCES `custom` (`id`)
+  KEY `fk_class_member_custom` (`user`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -97,8 +94,7 @@ CREATE TABLE `exam` (
   `updatetime` datetime NOT NULL,
   `Remark` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_exam_classid_class_info` (`classid`),
-  CONSTRAINT `fk_exam_classid_class_info` FOREIGN KEY (`classid`) REFERENCES `class_info` (`id`)
+  KEY `fk_exam_classid_class_info` (`classid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -144,9 +140,7 @@ CREATE TABLE `friend` (
   PRIMARY KEY (`id`),
   KEY `fk_friend_custom1` (`user`),
   KEY `fk_friend_custom2` (`friends`),
-  KEY `fk_friend_custom` (`operator`),
-  CONSTRAINT `fk_friend_custom1` FOREIGN KEY (`user`) REFERENCES `custom` (`id`),
-  CONSTRAINT `fk_friend_custom2` FOREIGN KEY (`friends`) REFERENCES `custom` (`id`)
+  KEY `fk_friend_custom` (`operator`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -184,8 +178,7 @@ CREATE TABLE `posts` (
   `updatetime` datetime NOT NULL,
   `Remark` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_posts_user_info` (`userid`),
-  CONSTRAINT `fk_posts_user_info` FOREIGN KEY (`userid`) REFERENCES `user_info` (`id`)
+  KEY `fk_posts_user_info` (`userid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -218,9 +211,7 @@ CREATE TABLE `reply` (
   `Remark` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_reply_posts` (`postsid`),
-  KEY `fk_reply_custom` (`user`),
-  CONSTRAINT `fk_reply_custom` FOREIGN KEY (`user`) REFERENCES `custom` (`id`),
-  CONSTRAINT `fk_reply_posts` FOREIGN KEY (`postsid`) REFERENCES `posts` (`id`)
+  KEY `fk_reply_custom` (`user`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -243,9 +234,7 @@ CREATE TABLE `talk` (
   PRIMARY KEY (`id`),
   KEY `fk_talk_custom1` (`user`),
   KEY `fk_talk_custom2` (`to_userid`),
-  KEY `fk_talk_custom3` (`operator`),
-  CONSTRAINT `fk_talk_custom1` FOREIGN KEY (`user`) REFERENCES `custom` (`id`),
-  CONSTRAINT `fk_talk_custom2` FOREIGN KEY (`to_userid`) REFERENCES `custom` (`id`)
+  KEY `fk_talk_custom3` (`operator`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -271,8 +260,7 @@ CREATE TABLE `task` (
   `Remark` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_task_custom2` (`operator`),
-  KEY `fk_task_custom` (`user`),
-  CONSTRAINT `fk_task_custom` FOREIGN KEY (`user`) REFERENCES `custom` (`id`)
+  KEY `fk_task_custom` (`user`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -295,9 +283,7 @@ CREATE TABLE `task_list` (
   PRIMARY KEY (`id`),
   KEY `fk_task_list_task` (`taskid`),
   KEY `fk_task_list_custom2` (`operator`),
-  KEY `fk_task_list_custom` (`user`),
-  CONSTRAINT `fk_task_list_custom` FOREIGN KEY (`user`) REFERENCES `custom` (`id`),
-  CONSTRAINT `fk_task_list_task` FOREIGN KEY (`taskid`) REFERENCES `task` (`id`)
+  KEY `fk_task_list_custom` (`user`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -321,8 +307,7 @@ CREATE TABLE `user_info` (
   `updatetime` datetime NOT NULL,
   `Remark` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_user_info_custom` (`customid`),
-  CONSTRAINT `fk_user_info_custom` FOREIGN KEY (`customid`) REFERENCES `custom` (`id`)
+  KEY `fk_user_info_custom` (`customid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -345,9 +330,7 @@ CREATE TABLE `watched` (
   PRIMARY KEY (`id`),
   KEY `fk_watched_custom1` (`user`),
   KEY `fk_watched_custom2` (`watched_user`),
-  KEY `fk_watched_custom3` (`operator`),
-  CONSTRAINT `fk_watched_custom1` FOREIGN KEY (`user`) REFERENCES `custom` (`id`),
-  CONSTRAINT `fk_watched_custom2` FOREIGN KEY (`watched_user`) REFERENCES `custom` (`id`)
+  KEY `fk_watched_custom3` (`operator`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
