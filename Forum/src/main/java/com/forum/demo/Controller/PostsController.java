@@ -117,8 +117,8 @@ public class PostsController {
     }
 
     //获取指定帖子的信息
-    @GetMapping(value = "getPostsInfo")
-    public Result getPosts()
+    //@GetMapping(value = "getPostsInfo")
+   // public Result getPosts()
 
 
 }
