@@ -2,6 +2,7 @@ package com.forum.demo.DAO;
 
 import com.forum.demo.Entity.ClassInfoEntity;
 import com.forum.demo.Entity.PostsEntity;
+import javafx.geometry.Pos;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
