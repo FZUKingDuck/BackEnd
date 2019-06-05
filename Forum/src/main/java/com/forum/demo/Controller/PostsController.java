@@ -12,6 +12,7 @@ import com.forum.demo.UtilTool.RedisOperator;
 import com.forum.demo.UtilTool.StringUtils;
 import org.hibernate.validator.constraints.EAN;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.websocket.server.PathParam;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(value =  "/posts")
@@ -77,7 +79,46 @@ public class PostsController {
     //获取所有帖子的数据
     //不需要指定帖子的类型
     //pageNumber：页码
-   // @GetMapping(value = "getPostsListAll")
+    @GetMapping(value = "getPostsListAll")
+    public Result getPostsListAll(@PathParam("pageNumber")String pageNumber){
+        Result result  = new Result();
+
+        if(!StringUtils.checkKey(pageNumber)){
+            result.setNullFalse();
+            return result;
+        }
+
+        try{
+            int number = Integer.valueOf(pageNumber);
+            if(number<1){
+                result.setFalse(201,"页码错误");
+                return result;
+            }
+
+            //创建根据发帖时间排序的分页查询规则
+            PageRequest page = PageRequest.of(number,15, Sort.Direction.DESC,"creattime");
+            //获取数据，返回
+            Page<PostsEntity> res = postsDao.findAll(page);
+            if(!res.hasContent()){
+                result.setSysFalse();
+                return result;
+            }
+            List<PostsEntity> list = res.getContent();
+            result.setOK("ok",list);
+            return result;
+
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            result.setSysFalse();
+            return result;
+        }
+
+    }
+
+    //获取指定帖子的信息
+    @GetMapping(value = "getPostsInfo")
+    public Result getPosts()
 
 
 }
