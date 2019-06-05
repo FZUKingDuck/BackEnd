@@ -59,7 +59,7 @@ public class PostsController {
             }
 
             //创建根据发帖时间排序的分页查询规则
-            PageRequest page = PageRequest.of(number,10, Sort.Direction.DESC,"creattime");
+            PageRequest page = PageRequest.of(number,15, Sort.Direction.DESC,"creattime");
             //获取数据，返回
             List<PostsEntity> list = postsDao.findAllByTypeIn(type,page);
             result.setOK("ok",list);
