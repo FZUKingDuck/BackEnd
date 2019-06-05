@@ -1,7 +1,7 @@
 package com.forum.demo.Entity;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
@@ -12,11 +12,9 @@ public class ClassMemberEntity {
     private String user;
     private int status;
     private String operator;
-    private Date creattime;
-    private Date updatetime;
+    private Timestamp creattime;
+    private Timestamp updatetime;
     private String remark;
-    private ClassInfoEntity classInfoByClassid;
-    private CustomEntity customByUser;
 
     @Id
     @Column(name = "id")
@@ -70,21 +68,21 @@ public class ClassMemberEntity {
 
     @Basic
     @Column(name = "creattime")
-    public Date getCreattime() {
+    public Timestamp getCreattime() {
         return creattime;
     }
 
-    public void setCreattime(Date creattime) {
+    public void setCreattime(Timestamp creattime) {
         this.creattime = creattime;
     }
 
     @Basic
     @Column(name = "updatetime")
-    public Date getUpdatetime() {
+    public Timestamp getUpdatetime() {
         return updatetime;
     }
 
-    public void setUpdatetime(Date updatetime) {
+    public void setUpdatetime(Timestamp updatetime) {
         this.updatetime = updatetime;
     }
 
@@ -116,25 +114,5 @@ public class ClassMemberEntity {
     @Override
     public int hashCode() {
         return Objects.hash(id, classid, user, status, operator, creattime, updatetime, remark);
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "classid", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
-    public ClassInfoEntity getClassInfoByClassid() {
-        return classInfoByClassid;
-    }
-
-    public void setClassInfoByClassid(ClassInfoEntity classInfoByClassid) {
-        this.classInfoByClassid = classInfoByClassid;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "user", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
-    public CustomEntity getCustomByUser() {
-        return customByUser;
-    }
-
-    public void setCustomByUser(CustomEntity customByUser) {
-        this.customByUser = customByUser;
     }
 }

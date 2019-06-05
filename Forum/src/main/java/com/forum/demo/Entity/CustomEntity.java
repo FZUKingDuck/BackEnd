@@ -1,35 +1,19 @@
 package com.forum.demo.Entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
 import javax.persistence.*;
-import java.sql.Date;
-import java.util.Collection;
+import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name = "custom", schema = "forum")
+@Table(name = "custom", schema = "forum", catalog = "")
 public class CustomEntity {
     private String id;
     private String name;
     private String password;
     private String operator;
-    private Date creattime;
-    private Date updatetime;
+    private Timestamp creattime;
+    private Timestamp updatetime;
     private String remark;
-    private Collection<ClassInfoEntity> classInfosById;
-    private Collection<ClassMemberEntity> classMembersById;
-    private Collection<ExamInfoEntity> examInfosById;
-    private Collection<FriendEntity> friendsById;
-    private Collection<FriendEntity> friendsById_0;
-    private Collection<ReplyEntity> repliesById;
-    private Collection<TalkEntity> talksById;
-    private Collection<TalkEntity> talksById_0;
-    private Collection<TaskEntity> tasksById;
-    private Collection<TaskListEntity> taskListsById;
-    private Collection<UserInfoEntity> userInfosById;
-    private Collection<WatchedEntity> watchedsById;
-    private Collection<WatchedEntity> watchedsById_0;
 
     @Id
     @Column(name = "id")
@@ -73,21 +57,21 @@ public class CustomEntity {
 
     @Basic
     @Column(name = "creattime")
-    public Date getCreattime() {
+    public Timestamp getCreattime() {
         return creattime;
     }
 
-    public void setCreattime(Date creattime) {
+    public void setCreattime(Timestamp creattime) {
         this.creattime = creattime;
     }
 
     @Basic
     @Column(name = "updatetime")
-    public Date getUpdatetime() {
+    public Timestamp getUpdatetime() {
         return updatetime;
     }
 
-    public void setUpdatetime(Date updatetime) {
+    public void setUpdatetime(Timestamp updatetime) {
         this.updatetime = updatetime;
     }
 
@@ -118,135 +102,5 @@ public class CustomEntity {
     @Override
     public int hashCode() {
         return Objects.hash(id, name, password, operator, creattime, updatetime, remark);
-    }
-
-    @JsonBackReference
-    @OneToMany(mappedBy = "customByTeacher")
-    public Collection<ClassInfoEntity> getClassInfosById() {
-        return classInfosById;
-    }
-
-    public void setClassInfosById(Collection<ClassInfoEntity> classInfosById) {
-        this.classInfosById = classInfosById;
-    }
-
-    @JsonBackReference
-    @OneToMany(mappedBy = "customByUser")
-    public Collection<ClassMemberEntity> getClassMembersById() {
-        return classMembersById;
-    }
-
-    public void setClassMembersById(Collection<ClassMemberEntity> classMembersById) {
-        this.classMembersById = classMembersById;
-    }
-
-    @JsonBackReference
-    @OneToMany(mappedBy = "customByUser")
-    public Collection<ExamInfoEntity> getExamInfosById() {
-        return examInfosById;
-    }
-
-    public void setExamInfosById(Collection<ExamInfoEntity> examInfosById) {
-        this.examInfosById = examInfosById;
-    }
-
-    @JsonBackReference
-    @OneToMany(mappedBy = "customByUser")
-    public Collection<FriendEntity> getFriendsById() {
-        return friendsById;
-    }
-
-    public void setFriendsById(Collection<FriendEntity> friendsById) {
-        this.friendsById = friendsById;
-    }
-
-    @JsonBackReference
-    @OneToMany(mappedBy = "customByFriends")
-    public Collection<FriendEntity> getFriendsById_0() {
-        return friendsById_0;
-    }
-
-    public void setFriendsById_0(Collection<FriendEntity> friendsById_0) {
-        this.friendsById_0 = friendsById_0;
-    }
-
-    @JsonBackReference
-    @OneToMany(mappedBy = "customByUser")
-    public Collection<ReplyEntity> getRepliesById() {
-        return repliesById;
-    }
-
-    public void setRepliesById(Collection<ReplyEntity> repliesById) {
-        this.repliesById = repliesById;
-    }
-
-    @JsonBackReference
-    @OneToMany(mappedBy = "customByUser")
-    public Collection<TalkEntity> getTalksById() {
-        return talksById;
-    }
-
-    public void setTalksById(Collection<TalkEntity> talksById) {
-        this.talksById = talksById;
-    }
-
-    @JsonBackReference
-    @OneToMany(mappedBy = "customByToUserid")
-    public Collection<TalkEntity> getTalksById_0() {
-        return talksById_0;
-    }
-
-    public void setTalksById_0(Collection<TalkEntity> talksById_0) {
-        this.talksById_0 = talksById_0;
-    }
-
-    @JsonBackReference
-    @OneToMany(mappedBy = "customByUser")
-    public Collection<TaskEntity> getTasksById() {
-        return tasksById;
-    }
-
-    public void setTasksById(Collection<TaskEntity> tasksById) {
-        this.tasksById = tasksById;
-    }
-
-    @JsonBackReference
-    @OneToMany(mappedBy = "customByUser")
-    public Collection<TaskListEntity> getTaskListsById() {
-        return taskListsById;
-    }
-
-    public void setTaskListsById(Collection<TaskListEntity> taskListsById) {
-        this.taskListsById = taskListsById;
-    }
-
-    @JsonBackReference
-    @OneToMany(mappedBy = "customByCustomid")
-    public Collection<UserInfoEntity> getUserInfosById() {
-        return userInfosById;
-    }
-
-    public void setUserInfosById(Collection<UserInfoEntity> userInfosById) {
-        this.userInfosById = userInfosById;
-    }
-
-    @JsonBackReference
-    @OneToMany(mappedBy = "customByUser")
-    public Collection<WatchedEntity> getWatchedsById() {
-        return watchedsById;
-    }
-
-    public void setWatchedsById(Collection<WatchedEntity> watchedsById) {
-        this.watchedsById = watchedsById;
-    }
-
-    @JsonBackReference
-    @OneToMany(mappedBy = "customByWatchedUser")
-    public Collection<WatchedEntity> getWatchedsById_0() {
-        return watchedsById_0;
-    }
-
-    public void setWatchedsById_0(Collection<WatchedEntity> watchedsById_0) {
-        this.watchedsById_0 = watchedsById_0;
     }
 }

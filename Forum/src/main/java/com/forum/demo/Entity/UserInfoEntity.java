@@ -2,25 +2,23 @@ package com.forum.demo.Entity;
 
 import javax.persistence.*;
 import java.sql.Date;
-import java.util.Collection;
+import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
 @Table(name = "user_info", schema = "forum", catalog = "")
 public class UserInfoEntity {
     private String id;
+    private String customid;
     private String name;
     private int sex;
     private Date birth;
     private String signature;
     private String city;
     private String operator;
-    private Date creattime;
-    private Date updatetime;
+    private Timestamp creattime;
+    private Timestamp updatetime;
     private String remark;
-    private CustomEntity customByCustomid;
-    private String customid;
-    private Collection<PostsEntity> postsById;
 
     @Id
     @Column(name = "id")
@@ -30,6 +28,16 @@ public class UserInfoEntity {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    @Basic
+    @Column(name = "customid")
+    public String getCustomid() {
+        return customid;
+    }
+
+    public void setCustomid(String customid) {
+        this.customid = customid;
     }
 
     @Basic
@@ -94,21 +102,21 @@ public class UserInfoEntity {
 
     @Basic
     @Column(name = "creattime")
-    public Date getCreattime() {
+    public Timestamp getCreattime() {
         return creattime;
     }
 
-    public void setCreattime(Date creattime) {
+    public void setCreattime(Timestamp creattime) {
         this.creattime = creattime;
     }
 
     @Basic
     @Column(name = "updatetime")
-    public Date getUpdatetime() {
+    public Timestamp getUpdatetime() {
         return updatetime;
     }
 
-    public void setUpdatetime(Date updatetime) {
+    public void setUpdatetime(Timestamp updatetime) {
         this.updatetime = updatetime;
     }
 
@@ -129,6 +137,7 @@ public class UserInfoEntity {
         UserInfoEntity that = (UserInfoEntity) o;
         return sex == that.sex &&
                 Objects.equals(id, that.id) &&
+                Objects.equals(customid, that.customid) &&
                 Objects.equals(name, that.name) &&
                 Objects.equals(birth, that.birth) &&
                 Objects.equals(signature, that.signature) &&
@@ -141,35 +150,6 @@ public class UserInfoEntity {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, sex, birth, signature, city, operator, creattime, updatetime, remark);
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "customid", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
-    public CustomEntity getCustomByCustomid() {
-        return customByCustomid;
-    }
-
-    public void setCustomByCustomid(CustomEntity customByCustomid) {
-        this.customByCustomid = customByCustomid;
-    }
-
-    @Basic
-    @Column(name = "customid")
-    public String getCustomid() {
-        return customid;
-    }
-
-    public void setCustomid(String customid) {
-        this.customid = customid;
-    }
-
-    @OneToMany(mappedBy = "userInfoByUserid")
-    public Collection<PostsEntity> getPostsById() {
-        return postsById;
-    }
-
-    public void setPostsById(Collection<PostsEntity> postsById) {
-        this.postsById = postsById;
+        return Objects.hash(id, customid, name, sex, birth, signature, city, operator, creattime, updatetime, remark);
     }
 }

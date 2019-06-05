@@ -1,7 +1,7 @@
 package com.forum.demo.Entity;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
@@ -13,11 +13,9 @@ public class ReplyEntity {
     private String info;
     private int top;
     private String operator;
-    private Date creattime;
-    private Date updatetime;
+    private Timestamp creattime;
+    private Timestamp updatetime;
     private String remark;
-    private PostsEntity postsByPostsid;
-    private CustomEntity customByUser;
 
     @Id
     @Column(name = "id")
@@ -81,21 +79,21 @@ public class ReplyEntity {
 
     @Basic
     @Column(name = "creattime")
-    public Date getCreattime() {
+    public Timestamp getCreattime() {
         return creattime;
     }
 
-    public void setCreattime(Date creattime) {
+    public void setCreattime(Timestamp creattime) {
         this.creattime = creattime;
     }
 
     @Basic
     @Column(name = "updatetime")
-    public Date getUpdatetime() {
+    public Timestamp getUpdatetime() {
         return updatetime;
     }
 
-    public void setUpdatetime(Date updatetime) {
+    public void setUpdatetime(Timestamp updatetime) {
         this.updatetime = updatetime;
     }
 
@@ -128,25 +126,5 @@ public class ReplyEntity {
     @Override
     public int hashCode() {
         return Objects.hash(id, postsid, user, info, top, operator, creattime, updatetime, remark);
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "postsid", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
-    public PostsEntity getPostsByPostsid() {
-        return postsByPostsid;
-    }
-
-    public void setPostsByPostsid(PostsEntity postsByPostsid) {
-        this.postsByPostsid = postsByPostsid;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "user", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
-    public CustomEntity getCustomByUser() {
-        return customByUser;
-    }
-
-    public void setCustomByUser(CustomEntity customByUser) {
-        this.customByUser = customByUser;
     }
 }

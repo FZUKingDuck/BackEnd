@@ -1,8 +1,7 @@
 package com.forum.demo.Entity;
 
 import javax.persistence.*;
-import java.sql.Date;
-import java.util.Collection;
+import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
@@ -15,13 +14,11 @@ public class TaskEntity {
     private String status;
     private int money;
     private String info;
-    private Date endtime;
+    private Timestamp endtime;
     private String operator;
-    private Date creattime;
-    private Date updatetime;
+    private Timestamp creattime;
+    private Timestamp updatetime;
     private String remark;
-    private CustomEntity customByUser;
-    private Collection<TaskListEntity> taskListsById;
 
     @Id
     @Column(name = "id")
@@ -95,11 +92,11 @@ public class TaskEntity {
 
     @Basic
     @Column(name = "endtime")
-    public Date getEndtime() {
+    public Timestamp getEndtime() {
         return endtime;
     }
 
-    public void setEndtime(Date endtime) {
+    public void setEndtime(Timestamp endtime) {
         this.endtime = endtime;
     }
 
@@ -115,21 +112,21 @@ public class TaskEntity {
 
     @Basic
     @Column(name = "creattime")
-    public Date getCreattime() {
+    public Timestamp getCreattime() {
         return creattime;
     }
 
-    public void setCreattime(Date creattime) {
+    public void setCreattime(Timestamp creattime) {
         this.creattime = creattime;
     }
 
     @Basic
     @Column(name = "updatetime")
-    public Date getUpdatetime() {
+    public Timestamp getUpdatetime() {
         return updatetime;
     }
 
-    public void setUpdatetime(Date updatetime) {
+    public void setUpdatetime(Timestamp updatetime) {
         this.updatetime = updatetime;
     }
 
@@ -165,24 +162,5 @@ public class TaskEntity {
     @Override
     public int hashCode() {
         return Objects.hash(id, user, type, title, status, money, info, endtime, operator, creattime, updatetime, remark);
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "user", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
-    public CustomEntity getCustomByUser() {
-        return customByUser;
-    }
-
-    public void setCustomByUser(CustomEntity customByUser) {
-        this.customByUser = customByUser;
-    }
-
-    @OneToMany(mappedBy = "taskByTaskid")
-    public Collection<TaskListEntity> getTaskListsById() {
-        return taskListsById;
-    }
-
-    public void setTaskListsById(Collection<TaskListEntity> taskListsById) {
-        this.taskListsById = taskListsById;
     }
 }

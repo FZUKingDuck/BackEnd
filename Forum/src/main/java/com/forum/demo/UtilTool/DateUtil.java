@@ -1,5 +1,6 @@
 package com.forum.demo.UtilTool;
 
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.Random;
 
@@ -18,11 +19,12 @@ public class DateUtil {
     }
 
     //获取时间
-    public static java.sql.Date getTime(){
-        return new java.sql.Date(new Date().getTime());
+    public static Timestamp getTime() {
+        return new Timestamp(new Date(null).getTime());
     }
 
-    //获取一个随机数字（String格式)
+
+    //获取一个随机数字（String格式)J
     public static String getRandomToString(){
         Random random = new Random(new Date().getTime());
         return String.valueOf(random.nextInt(10));

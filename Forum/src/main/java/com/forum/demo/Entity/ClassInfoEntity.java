@@ -1,8 +1,7 @@
 package com.forum.demo.Entity;
 
 import javax.persistence.*;
-import java.sql.Date;
-import java.util.Collection;
+import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
@@ -13,12 +12,9 @@ public class ClassInfoEntity {
     private String type;
     private String info;
     private String operator;
-    private Date creattime;
-    private Date updatetime;
+    private Timestamp creattime;
+    private Timestamp updatetime;
     private String remark;
-    private CustomEntity customByTeacher;
-    private Collection<ClassMemberEntity> classMembersById;
-    private Collection<ExamEntity> examsById;
 
     @Id
     @Column(name = "id")
@@ -72,21 +68,21 @@ public class ClassInfoEntity {
 
     @Basic
     @Column(name = "creattime")
-    public Date getCreattime() {
+    public Timestamp getCreattime() {
         return creattime;
     }
 
-    public void setCreattime(Date creattime) {
+    public void setCreattime(Timestamp creattime) {
         this.creattime = creattime;
     }
 
     @Basic
     @Column(name = "updatetime")
-    public Date getUpdatetime() {
+    public Timestamp getUpdatetime() {
         return updatetime;
     }
 
-    public void setUpdatetime(Date updatetime) {
+    public void setUpdatetime(Timestamp updatetime) {
         this.updatetime = updatetime;
     }
 
@@ -118,33 +114,5 @@ public class ClassInfoEntity {
     @Override
     public int hashCode() {
         return Objects.hash(id, teacher, type, info, operator, creattime, updatetime, remark);
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "teacher", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
-    public CustomEntity getCustomByTeacher() {
-        return customByTeacher;
-    }
-
-    public void setCustomByTeacher(CustomEntity customByTeacher) {
-        this.customByTeacher = customByTeacher;
-    }
-
-    @OneToMany(mappedBy = "classInfoByClassid")
-    public Collection<ClassMemberEntity> getClassMembersById() {
-        return classMembersById;
-    }
-
-    public void setClassMembersById(Collection<ClassMemberEntity> classMembersById) {
-        this.classMembersById = classMembersById;
-    }
-
-    @OneToMany(mappedBy = "classInfoByClassid")
-    public Collection<ExamEntity> getExamsById() {
-        return examsById;
-    }
-
-    public void setExamsById(Collection<ExamEntity> examsById) {
-        this.examsById = examsById;
     }
 }

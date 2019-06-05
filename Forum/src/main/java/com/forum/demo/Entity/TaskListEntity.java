@@ -15,8 +15,6 @@ public class TaskListEntity {
     private Date creattime;
     private Date updatetime;
     private String remark;
-    private CustomEntity customByUser;
-    private TaskEntity taskByTaskid;
 
     @Id
     @Column(name = "id")
@@ -116,25 +114,5 @@ public class TaskListEntity {
     @Override
     public int hashCode() {
         return Objects.hash(id, user, taskid, status, operator, creattime, updatetime, remark);
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "user", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
-    public CustomEntity getCustomByUser() {
-        return customByUser;
-    }
-
-    public void setCustomByUser(CustomEntity customByUser) {
-        this.customByUser = customByUser;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "taskid", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
-    public TaskEntity getTaskByTaskid() {
-        return taskByTaskid;
-    }
-
-    public void setTaskByTaskid(TaskEntity taskByTaskid) {
-        this.taskByTaskid = taskByTaskid;
     }
 }

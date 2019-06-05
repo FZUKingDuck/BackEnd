@@ -1,14 +1,11 @@
 package com.forum.demo.Entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
 import javax.persistence.*;
-import java.sql.Date;
-import java.util.Collection;
+import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name = "posts", schema = "forum")
+@Table(name = "posts", schema = "forum", catalog = "")
 public class PostsEntity {
     private String id;
     private String userid;
@@ -17,11 +14,9 @@ public class PostsEntity {
     private String info;
     private String authority;
     private String operator;
-    private Date creattime;
-    private Date updatetime;
+    private Timestamp creattime;
+    private Timestamp updatetime;
     private String remark;
-    private UserInfoEntity userInfoByUserid;
-    private Collection<ReplyEntity> repliesById;
 
     @Id
     @Column(name = "id")
@@ -95,21 +90,21 @@ public class PostsEntity {
 
     @Basic
     @Column(name = "creattime")
-    public Date getCreattime() {
+    public Timestamp getCreattime() {
         return creattime;
     }
 
-    public void setCreattime(Date creattime) {
+    public void setCreattime(Timestamp creattime) {
         this.creattime = creattime;
     }
 
     @Basic
     @Column(name = "updatetime")
-    public Date getUpdatetime() {
+    public Timestamp getUpdatetime() {
         return updatetime;
     }
 
-    public void setUpdatetime(Date updatetime) {
+    public void setUpdatetime(Timestamp updatetime) {
         this.updatetime = updatetime;
     }
 
@@ -143,25 +138,5 @@ public class PostsEntity {
     @Override
     public int hashCode() {
         return Objects.hash(id, userid, title, type, info, authority, operator, creattime, updatetime, remark);
-    }
-
-    @ManyToOne
-    @JsonBackReference
-    @JoinColumn(name = "userid", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
-    public UserInfoEntity getUserInfoByUserid() {
-        return userInfoByUserid;
-    }
-
-    public void setUserInfoByUserid(UserInfoEntity userInfoByUserid) {
-        this.userInfoByUserid = userInfoByUserid;
-    }
-
-    @OneToMany(mappedBy = "postsByPostsid")
-    public Collection<ReplyEntity> getRepliesById() {
-        return repliesById;
-    }
-
-    public void setRepliesById(Collection<ReplyEntity> repliesById) {
-        this.repliesById = repliesById;
     }
 }

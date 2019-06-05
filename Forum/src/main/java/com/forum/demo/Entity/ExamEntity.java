@@ -2,7 +2,7 @@ package com.forum.demo.Entity;
 
 import javax.persistence.*;
 import java.sql.Date;
-import java.util.Collection;
+import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
@@ -14,11 +14,9 @@ public class ExamEntity {
     private String info;
     private Date endtime;
     private String operator;
-    private Date creattime;
-    private Date updatetime;
+    private Timestamp creattime;
+    private Timestamp updatetime;
     private String remark;
-    private ClassInfoEntity classInfoByClassid;
-    private Collection<ExamInfoEntity> examInfosById;
 
     @Id
     @Column(name = "id")
@@ -82,21 +80,21 @@ public class ExamEntity {
 
     @Basic
     @Column(name = "creattime")
-    public Date getCreattime() {
+    public Timestamp getCreattime() {
         return creattime;
     }
 
-    public void setCreattime(Date creattime) {
+    public void setCreattime(Timestamp creattime) {
         this.creattime = creattime;
     }
 
     @Basic
     @Column(name = "updatetime")
-    public Date getUpdatetime() {
+    public Timestamp getUpdatetime() {
         return updatetime;
     }
 
-    public void setUpdatetime(Date updatetime) {
+    public void setUpdatetime(Timestamp updatetime) {
         this.updatetime = updatetime;
     }
 
@@ -129,24 +127,5 @@ public class ExamEntity {
     @Override
     public int hashCode() {
         return Objects.hash(id, classid, title, info, endtime, operator, creattime, updatetime, remark);
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "classid", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
-    public ClassInfoEntity getClassInfoByClassid() {
-        return classInfoByClassid;
-    }
-
-    public void setClassInfoByClassid(ClassInfoEntity classInfoByClassid) {
-        this.classInfoByClassid = classInfoByClassid;
-    }
-
-    @OneToMany(mappedBy = "examByExamid")
-    public Collection<ExamInfoEntity> getExamInfosById() {
-        return examInfosById;
-    }
-
-    public void setExamInfosById(Collection<ExamInfoEntity> examInfosById) {
-        this.examInfosById = examInfosById;
     }
 }

@@ -1,7 +1,7 @@
 package com.forum.demo.Entity;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
@@ -11,11 +11,9 @@ public class WatchedEntity {
     private String user;
     private String watchedUser;
     private String operator;
-    private Date creattime;
-    private Date updatetime;
+    private Timestamp creattime;
+    private Timestamp updatetime;
     private String remark;
-    private CustomEntity customByUser;
-    private CustomEntity customByWatchedUser;
 
     @Id
     @Column(name = "id")
@@ -59,21 +57,21 @@ public class WatchedEntity {
 
     @Basic
     @Column(name = "creattime")
-    public Date getCreattime() {
+    public Timestamp getCreattime() {
         return creattime;
     }
 
-    public void setCreattime(Date creattime) {
+    public void setCreattime(Timestamp creattime) {
         this.creattime = creattime;
     }
 
     @Basic
     @Column(name = "updatetime")
-    public Date getUpdatetime() {
+    public Timestamp getUpdatetime() {
         return updatetime;
     }
 
-    public void setUpdatetime(Date updatetime) {
+    public void setUpdatetime(Timestamp updatetime) {
         this.updatetime = updatetime;
     }
 
@@ -104,25 +102,5 @@ public class WatchedEntity {
     @Override
     public int hashCode() {
         return Objects.hash(id, user, watchedUser, operator, creattime, updatetime, remark);
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "user", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
-    public CustomEntity getCustomByUser() {
-        return customByUser;
-    }
-
-    public void setCustomByUser(CustomEntity customByUser) {
-        this.customByUser = customByUser;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "watched_user", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
-    public CustomEntity getCustomByWatchedUser() {
-        return customByWatchedUser;
-    }
-
-    public void setCustomByWatchedUser(CustomEntity customByWatchedUser) {
-        this.customByWatchedUser = customByWatchedUser;
     }
 }
