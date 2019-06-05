@@ -23,6 +23,11 @@ public class DateUtil {
         return new Timestamp(new Date(null).getTime());
     }
 
+    //字符串转时间
+    public static  Timestamp changeTime(String time){
+        return Timestamp.valueOf(time);
+    }
+
 
     //获取一个随机数字（String格式)J
     public static String getRandomToString(){
