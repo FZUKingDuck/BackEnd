@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53bd6736-f860-4f01-8e28-04cf0d2af8c3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/Controller/PostsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/Controller/PostsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/Controller/ClassesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/Controller/ClassesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/Controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/Controller/TaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/DAO/TaskDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/DAO/TaskDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/DAO/TaskListDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/DAO/TaskListDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/DAO/ClassInfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/DAO/ClassInfoDao.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -37,8 +36,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/DAO/ClassInfoDao.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="95">
-                  <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+                <state relative-caret-position="190">
+                  <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -47,10 +46,10 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/Controller/ClassesController.java">
+            <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/DAO/TalkDao.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="38">
-                  <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+                <state relative-caret-position="76">
+                  <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
                 </state>
               </provider>
             </entry>
@@ -65,19 +64,40 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/Controller/PostsController.java">
+            <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/DAO/FriendDao.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="710">
-                  <caret line="224" lean-forward="true" selection-start-line="224" selection-end-line="224" />
+                <state relative-caret-position="114">
+                  <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/UtilTool/DateUtil.java">
+            <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/Controller/ClassesController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="532">
-                  <caret line="34" column="50" lean-forward="true" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
+                <state relative-caret-position="698">
+                  <caret line="62" column="6" lean-forward="true" selection-start-line="62" selection-start-column="6" selection-end-line="62" selection-end-column="6" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/Controller/TestController.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="95">
+                  <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/Controller/PostsController.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="984">
+                  <caret line="360" column="75" lean-forward="true" selection-start-line="360" selection-start-column="75" selection-end-line="360" selection-end-column="75" />
                 </state>
               </provider>
             </entry>
@@ -85,17 +105,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/Controller/LoginController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="741">
-                  <caret line="62" column="26" lean-forward="true" selection-start-line="60" selection-start-column="10" selection-end-line="62" selection-end-column="26" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/DAO/ExamDao.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="76">
-                  <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+                <state relative-caret-position="608">
+                  <caret line="46" column="30" lean-forward="true" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
                 </state>
               </provider>
             </entry>
@@ -110,19 +121,10 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/DAO/ClassMemberDao.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="76">
-                  <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/Controller/TaskController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="38">
-                  <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+                <state relative-caret-position="603">
+                  <caret line="212" column="29" lean-forward="true" selection-start-line="212" selection-start-column="29" selection-end-line="212" selection-end-column="29" />
                 </state>
               </provider>
             </entry>
@@ -130,12 +132,12 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/Controller/TaskController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="736">
-                  <caret line="204" column="5" lean-forward="true" selection-start-line="204" selection-start-column="5" selection-end-line="204" selection-end-column="5" />
+                <state relative-caret-position="755">
+                  <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -144,28 +146,10 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/Entity/TaskEntity.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1335">
-                  <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/ResponseResult/JsonResult.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="38">
-                  <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/ResponseResult/Result.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="532">
-                  <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+                  <caret line="49" selection-start-line="49" selection-end-line="49" />
                 </state>
               </provider>
             </entry>
@@ -174,12 +158,12 @@
             <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/Entity/ClassInfoEntity.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="361">
-                  <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+                  <caret line="53" selection-start-line="53" selection-end-line="53" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/DAO/TaskListDao.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="95">
@@ -191,8 +175,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/DAO/TaskDao.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="266">
-                  <caret line="14" selection-start-line="14" selection-end-line="14" />
+                <state relative-caret-position="247">
+                  <caret line="13" column="70" lean-forward="true" selection-start-line="13" selection-start-column="70" selection-end-line="13" selection-end-column="70" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -215,6 +199,8 @@
         <option value="$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/UtilTool/DateUtil.java" />
         <option value="$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/DAO/TaskDao.java" />
         <option value="$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/DAO/TaskListDao.java" />
+        <option value="$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/Controller/ClassesController.java" />
+        <option value="$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/DAO/ClassInfoDao.java" />
         <option value="$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/Controller/TaskController.java" />
       </list>
     </option>
@@ -260,6 +246,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -356,8 +344,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -367,7 +353,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559743840866" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559984239594" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/实验一/tmall" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -427,13 +413,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21025000" />
+    <option name="totallyTimeSpent" value="21166000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20042644" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15085287" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -505,9 +491,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/Controller/TestController.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Forum/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -536,23 +519,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/Controller/ClassesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/DAO/ClassInfoDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/DAO/CustomDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -560,38 +526,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/Controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="62" column="26" lean-forward="true" selection-start-line="60" selection-start-column="10" selection-end-line="62" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/Controller/IndexController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="50" column="81" lean-forward="true" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/Entity/ClassInfoEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/ResponseResult/Result.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
-          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/Controller/PostsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="710">
-          <caret line="224" lean-forward="true" selection-start-line="224" selection-end-line="224" />
+        <state relative-caret-position="984">
+          <caret line="360" column="75" lean-forward="true" selection-start-line="360" selection-start-column="75" selection-end-line="360" selection-end-column="75" />
         </state>
       </provider>
     </entry>
@@ -618,11 +570,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/DAO/TaskDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="247">
+          <caret line="13" column="70" lean-forward="true" selection-start-line="13" selection-start-column="70" selection-end-line="13" selection-end-column="70" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/DAO/TalkDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/DAO/FriendDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
@@ -633,10 +599,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/DAO/ClassInfoDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/Controller/TestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/Controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="46" column="30" lean-forward="true" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/Controller/TaskController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="204" column="5" lean-forward="true" selection-start-line="204" selection-start-column="5" selection-end-line="204" selection-end-column="5" />
+        <state relative-caret-position="603">
+          <caret line="212" column="29" lean-forward="true" selection-start-line="212" selection-start-column="29" selection-end-line="212" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/Controller/IndexController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="50" column="81" lean-forward="true" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/src/main/java/com/forum/demo/Controller/ClassesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="698">
+          <caret line="62" column="6" lean-forward="true" selection-start-line="62" selection-start-column="6" selection-end-line="62" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
