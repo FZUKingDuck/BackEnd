@@ -396,8 +396,6 @@ public class PostsController {
 
 
     }
-<<<<<<< Updated upstream
-=======
 
 
     //搜索帖子
@@ -443,5 +441,5 @@ public class PostsController {
     }
 
 
->>>>>>> Stashed changes
+
 }
