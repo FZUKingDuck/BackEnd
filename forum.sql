@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2019-06-05 17:49:41
+Date: 2019-06-08 16:46:22
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -56,6 +56,28 @@ CREATE TABLE `class_member` (
 
 -- ----------------------------
 -- Records of class_member
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for class_task
+-- ----------------------------
+DROP TABLE IF EXISTS `class_task`;
+CREATE TABLE `class_task` (
+  `id` varchar(255) NOT NULL,
+  `classid` varchar(255) NOT NULL COMMENT '班级id',
+  `name` varchar(255) NOT NULL COMMENT '任务名',
+  `info` varchar(255) NOT NULL COMMENT '任务信息',
+  `type` varchar(255) NOT NULL COMMENT '班级任务/教师任务',
+  `endtime` datetime NOT NULL COMMENT '截至时间',
+  `operator` varchar(255) NOT NULL,
+  `createtime` datetime NOT NULL,
+  `updatetime` datetime NOT NULL,
+  `remark` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of class_task
 -- ----------------------------
 
 -- ----------------------------
@@ -194,6 +216,7 @@ INSERT INTO `posts` VALUES ('15586241035317', '15586219479869', '测试1', 'html
 INSERT INTO `posts` VALUES ('15586241042149', '15586219479869', '测试1', 'html', '这是一个测试的数据', '1', '15586219479869', '2019-05-23 00:00:00', '2019-05-23 00:00:00', '8');
 INSERT INTO `posts` VALUES ('15586241047592', '15586219479869', '测试1', 'html', '这是一个测试的数据', '1', '15586219479869', '2019-05-23 00:00:00', '2019-05-23 00:00:00', '9');
 INSERT INTO `posts` VALUES ('15586241052832', '15586219479869', '测试1', 'html', '这是一个测试的数据', '1', '15586219479869', '2019-05-23 00:00:00', '2019-05-23 00:00:00', '0');
+INSERT INTO `posts` VALUES ('15599043082603', '15586219479869', '发帖测试', 'java', '这是一个测试的发帖', '1', '15586219479869', '2019-06-07 10:45:08', '2019-06-07 10:45:08', null);
 
 -- ----------------------------
 -- Table structure for reply

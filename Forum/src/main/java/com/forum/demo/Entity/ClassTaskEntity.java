@@ -5,14 +5,16 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name = "class_info", schema = "forum")
-public class ClassInfoEntity {
+@Table(name = "class_task", schema = "forum")
+public class ClassTaskEntity {
     private String id;
-    private String teacher;
-    private String type;
+    private String classid;
+    private String name;
     private String info;
+    private String type;
+    private Timestamp endtime;
     private String operator;
-    private Timestamp creattime;
+    private Timestamp createtime;
     private Timestamp updatetime;
     private String remark;
 
@@ -27,23 +29,23 @@ public class ClassInfoEntity {
     }
 
     @Basic
-    @Column(name = "teacher")
-    public String getTeacher() {
-        return teacher;
+    @Column(name = "classid")
+    public String getClassid() {
+        return classid;
     }
 
-    public void setTeacher(String teacher) {
-        this.teacher = teacher;
+    public void setClassid(String classid) {
+        this.classid = classid;
     }
 
     @Basic
-    @Column(name = "type")
-    public String getType() {
-        return type;
+    @Column(name = "name")
+    public String getName() {
+        return name;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Basic
@@ -57,6 +59,26 @@ public class ClassInfoEntity {
     }
 
     @Basic
+    @Column(name = "type")
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    @Basic
+    @Column(name = "endtime")
+    public Timestamp getEndtime() {
+        return endtime;
+    }
+
+    public void setEndtime(Timestamp endtime) {
+        this.endtime = endtime;
+    }
+
+    @Basic
     @Column(name = "operator")
     public String getOperator() {
         return operator;
@@ -67,13 +89,13 @@ public class ClassInfoEntity {
     }
 
     @Basic
-    @Column(name = "creattime")
-    public Timestamp getCreattime() {
-        return creattime;
+    @Column(name = "createtime")
+    public Timestamp getCreatetime() {
+        return createtime;
     }
 
-    public void setCreattime(Timestamp creattime) {
-        this.creattime = creattime;
+    public void setCreatetime(Timestamp createtime) {
+        this.createtime = createtime;
     }
 
     @Basic
@@ -87,7 +109,7 @@ public class ClassInfoEntity {
     }
 
     @Basic
-    @Column(name = "Remark")
+    @Column(name = "remark")
     public String getRemark() {
         return remark;
     }
@@ -100,19 +122,21 @@ public class ClassInfoEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ClassInfoEntity that = (ClassInfoEntity) o;
+        ClassTaskEntity that = (ClassTaskEntity) o;
         return Objects.equals(id, that.id) &&
-                Objects.equals(teacher, that.teacher) &&
-                Objects.equals(type, that.type) &&
+                Objects.equals(classid, that.classid) &&
+                Objects.equals(name, that.name) &&
                 Objects.equals(info, that.info) &&
+                Objects.equals(type, that.type) &&
+                Objects.equals(endtime, that.endtime) &&
                 Objects.equals(operator, that.operator) &&
-                Objects.equals(creattime, that.creattime) &&
+                Objects.equals(createtime, that.createtime) &&
                 Objects.equals(updatetime, that.updatetime) &&
                 Objects.equals(remark, that.remark);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, teacher, type, info, operator, creattime, updatetime, remark);
+        return Objects.hash(id, classid, name, info, type, endtime, operator, createtime, updatetime, remark);
     }
 }

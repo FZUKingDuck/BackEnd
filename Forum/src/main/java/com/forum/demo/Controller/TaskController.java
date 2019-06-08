@@ -41,8 +41,6 @@ public class TaskController {
       Result result = new Result();
       //pageNumber 页面  转换为number int  和Pageable page
 
-
-
       if(!StringUtils.checkKey(type)){
           result.setNullFalse();
           return result;
@@ -77,6 +75,7 @@ public class TaskController {
       }
   }
 
+<<<<<<< Updated upstream
   @MonitorRequest
   @PostMapping(value = "/publishTask")
 
@@ -205,4 +204,7 @@ public class TaskController {
         }
 
     }
+=======
+
+>>>>>>> Stashed changes
 }

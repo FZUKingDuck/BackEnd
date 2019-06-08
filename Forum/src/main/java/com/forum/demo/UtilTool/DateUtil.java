@@ -20,7 +20,7 @@ public class DateUtil {
 
     //获取时间
     public static Timestamp getTime() {
-        return new Timestamp(new Date(null).getTime());
+        return new Timestamp(new Date().getTime());
     }
 
     //字符串转时间

@@ -12,5 +12,5 @@ import java.util.List;
 
 public interface PostsDao extends JpaRepository<PostsEntity,String> {
     public List<PostsEntity> findAllByTypeIn(String type, Pageable page);
-
+    public List<PostsEntity> findAllByTitleIn(String title,Pageable page );
 }

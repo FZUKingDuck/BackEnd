@@ -1,6 +1,7 @@
 package com.forum.demo.Controller;
 
 
+import com.forum.demo.Annotation.LogPointCut;
 import com.forum.demo.Annotation.MonitorRequest;
 import com.forum.demo.DAO.CustomDao;
 import com.forum.demo.DAO.PostsDao;
@@ -13,14 +14,12 @@ import com.forum.demo.ResponseResult.Result;
 import com.forum.demo.UtilTool.DateUtil;
 import com.forum.demo.UtilTool.RedisOperator;
 import com.forum.demo.UtilTool.StringUtils;
-import javafx.geometry.Pos;
-import org.hibernate.dialect.CUBRIDDialect;
-import org.hibernate.validator.constraints.EAN;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
-import org.springframework.util.unit.DataUnit;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,11 +27,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.websocket.server.PathParam;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
 @RestController
+@EnableTransactionManagement
 @RequestMapping(value =  "/posts")
 public class PostsController {
 
@@ -66,7 +65,7 @@ public class PostsController {
 
         try{
             int number = Integer.valueOf(pageNumber);
-            if(number<1){
+            if(number<0){
                 result.setFalse(201,"页码错误");
                 return result;
             }
@@ -101,7 +100,7 @@ public class PostsController {
 
         try{
             int number = Integer.valueOf(pageNumber);
-            if(number<1){
+            if(number<0){
                 result.setFalse(201,"页码错误");
                 return result;
             }
@@ -128,12 +127,11 @@ public class PostsController {
     }
 
     //获取指定帖子的信息
-
     @GetMapping(value = "/getPostsInfo")
     public Result getPostsInfo(@PathParam("id")String id) {
         Result result = new Result();
 
-        if(StringUtils.checkKey(id)){
+        if(!StringUtils.checkKey(id)){
             result.setNullFalse();
             return result;
         }
@@ -154,15 +152,16 @@ public class PostsController {
 
     //发帖
     @MonitorRequest
+    @LogPointCut
     @PostMapping(value = "/newPosts")
-    public Result newPosts(@PathParam("id")String id,@PathParam("userid")String userid,
+    public Result newPosts(@PathParam("userid")String userid,
                            @PathParam("type")String type,@PathParam("title")String title,
                            @PathParam("info")String info,@PathParam("authority")String authority){
 
         Result result = new Result();
 
 
-        if(!StringUtils.checkKey(id)||!StringUtils.checkKey(userid)||
+        if(!StringUtils.checkKey(userid)||
                 !StringUtils.checkKey(type)||!StringUtils.checkKey(title)||
                 !StringUtils.checkKey(info)||!StringUtils.checkKey(authority)){
             result.setNullFalse();
@@ -205,6 +204,7 @@ public class PostsController {
 
     //回复帖子
     @MonitorRequest
+    @LogPointCut
     @PostMapping(value = "/replyPosts")
     public  Result replyPosts(@PathParam("postsid")String postsid,@PathParam("user")String user,
                               @PathParam("info")String info,@PathParam("top")String top){
@@ -246,7 +246,7 @@ public class PostsController {
                 replyEntity.setOperator(user);
                 replyEntity.setTop(topNum);
                 replyDao.save(replyEntity);
-
+                result.setOK("回复成功",replyEntity.getId());
                 return result;
             }catch (Exception e){
                 e.printStackTrace();
@@ -260,7 +260,9 @@ public class PostsController {
 
 
     //删除帖子
+    @Transactional
     @MonitorRequest
+    @LogPointCut
     @PostMapping(value = "/removePosts")
     public Result removePosts(@PathParam("postsid")String postsid,@PathParam("userid")String userid){
         Result result = new Result();
@@ -279,13 +281,13 @@ public class PostsController {
             }
 
             PostsEntity postsEntity = respo.get();
-            if(postsEntity.getUserid().equals(userid)){
+            if(!postsEntity.getUserid().equals(userid)){
                 result.setFalse(201,"无此权限");
                 return  result;
             }
 
             postsDao.delete(postsEntity);
-            replyDao.deleteReplyEntitiesByPostsid(postsid);
+            replyDao.deleteByPostsidEquals(postsid);
 
             result.setOK("删除成功",true);
             return result;
@@ -296,13 +298,11 @@ public class PostsController {
             return result;
         }
 
-
-
-
     }
 
     //修改帖子内容
     @MonitorRequest
+    @LogPointCut
     @PostMapping(value = "/updatePosts")
     public Result updatePosts(@PathParam("postsid")String postsid,@PathParam("userid")String userid,
                               @PathParam("info")String info,@PathParam("title")String title,
@@ -353,7 +353,8 @@ public class PostsController {
 
     }
 
-    @GetMapping(value = "/getReplly")
+    //获取回复消息
+    @GetMapping(value = "/getReply")
     public Result getReply(@PathParam("postsid")String postsid,@PathParam("pageNum")String pageNum){
         Result result = new Result();
 
@@ -366,7 +367,7 @@ public class PostsController {
         try {
 
             int number = Integer.valueOf(pageNum);
-            if(number<1){
+            if(number<0){
                 result.setFalse(201,"页码错误");
                 return result;
             }
@@ -395,4 +396,52 @@ public class PostsController {
 
 
     }
+<<<<<<< Updated upstream
+=======
+
+
+    //搜索帖子
+    //value:搜索字  pageNum：页码
+    //返回搜索记录
+    @LogPointCut
+    @GetMapping(value = "/getSearch")
+    public Result getSearch(@PathParam("value")String value,@PathParam("pageNum")String pageNum){
+        Result result = new Result();
+
+        if(!StringUtils.checkKey(value)||!StringUtils.checkKey(pageNum)){
+            result.setNullFalse();
+            return result;
+        }
+
+        try{
+            int num = Integer.valueOf(pageNum);
+            if(num<0){
+                result.setFalse(201,"页码错误");
+                return result;
+            }
+
+            PageRequest page = PageRequest.of(num,15, Sort.Direction.DESC,"creattime");
+
+            List<PostsEntity> list = postsDao.findAllByTitleIn(value,page);
+
+            if(list==null){
+                result.setFalse(201,"无搜索结果");
+                return result;
+            }
+
+            result.setOK("搜索成功",list);
+            return result;
+
+
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            result.setSysFalse();
+            return result;
+        }
+
+    }
+
+
+>>>>>>> Stashed changes
 }
