@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.websocket.server.PathParam;
+import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -120,6 +121,7 @@ public class TaskController {
           taskEntity.setEndtime(DateUtil.changeTime(endtime));
 
           taskDao.save(taskEntity);
+          result.setOK("任务发布成功",taskEntity);
           return  result;
       }
       catch (Exception e){
@@ -172,7 +174,7 @@ public class TaskController {
     }
     @MonitorRequest
     @PostMapping(value = "/undertakeTask")
-    public  Result undertakeTaskZ(@PathParam("user")String user,@PathParam("taskid")String taskid){
+    public  Result undertakeTask(@PathParam("user")String user,@PathParam("taskid")String taskid){
       Result result = new Result();
 
         if(!StringUtils.checkKey(user)||!StringUtils.checkKey(taskid)){
@@ -196,12 +198,22 @@ public class TaskController {
                 result.setFalse(201,"已接取任务");
                 return result;
             }
-
+            Date date = new Date(System.currentTimeMillis());
             TaskListEntity taskListEntity1 = new TaskListEntity();
             taskListEntity1.setId(DateUtil.getIdFromDate()); //时间戳生成ID
             taskListEntity1.setUser(user);
             taskListEntity1.setTaskid(taskid);
-            taskListEntity1.setStatus();
+            taskListEntity1.setStatus("0");
+            taskListEntity1.setOperator(user);
+            taskListEntity1.setCreattime(date);
+            taskListEntity1.setUpdatetime(date);//这是什么？
+            taskListDao.save(taskListEntity1);
+            result.setOK("任务接取成功",taskListEntity1);
+            return  result;
+        }catch (Exception e){
+            e.printStackTrace();
+            result.setSysFalse();
+            return result;
         }
 
     }
