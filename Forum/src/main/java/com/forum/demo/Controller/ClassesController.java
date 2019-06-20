@@ -61,5 +61,5 @@ public class ClassesController {
         PageRequest page = PageRequest.of()
     }
     */
-    public Result getClassTask()
+    public Result getClassTask(){return null;};
 }

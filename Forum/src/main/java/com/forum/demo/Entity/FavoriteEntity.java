@@ -5,16 +5,15 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name = "custom", schema = "forum", catalog = "")
-public class CustomEntity {
+@Table(name = "favorite", schema = "forum", catalog = "")
+public class FavoriteEntity {
     private String id;
-    private String name;
-    private String password;
+    private String userid;
+    private String postslist;
     private String operator;
-    private Timestamp creattime;
+    private Timestamp createtime;
     private Timestamp updatetime;
     private String remark;
-    private String power;
 
     @Id
     @Column(name = "id")
@@ -27,23 +26,23 @@ public class CustomEntity {
     }
 
     @Basic
-    @Column(name = "name")
-    public String getName() {
-        return name;
+    @Column(name = "userid")
+    public String getUserid() {
+        return userid;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
 
     @Basic
-    @Column(name = "password")
-    public String getPassword() {
-        return password;
+    @Column(name = "postslist")
+    public String getPostslist() {
+        return postslist;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPostslist(String postslist) {
+        this.postslist = postslist;
     }
 
     @Basic
@@ -57,13 +56,13 @@ public class CustomEntity {
     }
 
     @Basic
-    @Column(name = "creattime")
-    public Timestamp getCreattime() {
-        return creattime;
+    @Column(name = "createtime")
+    public Timestamp getCreatetime() {
+        return createtime;
     }
 
-    public void setCreattime(Timestamp creattime) {
-        this.creattime = creattime;
+    public void setCreatetime(Timestamp createtime) {
+        this.createtime = createtime;
     }
 
     @Basic
@@ -77,7 +76,7 @@ public class CustomEntity {
     }
 
     @Basic
-    @Column(name = "Remark")
+    @Column(name = "remark")
     public String getRemark() {
         return remark;
     }
@@ -90,28 +89,18 @@ public class CustomEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        CustomEntity that = (CustomEntity) o;
+        FavoriteEntity that = (FavoriteEntity) o;
         return Objects.equals(id, that.id) &&
-                Objects.equals(name, that.name) &&
-                Objects.equals(password, that.password) &&
+                Objects.equals(userid, that.userid) &&
+                Objects.equals(postslist, that.postslist) &&
                 Objects.equals(operator, that.operator) &&
-                Objects.equals(creattime, that.creattime) &&
+                Objects.equals(createtime, that.createtime) &&
                 Objects.equals(updatetime, that.updatetime) &&
                 Objects.equals(remark, that.remark);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, password, operator, creattime, updatetime, remark);
-    }
-
-    @Basic
-    @Column(name = "power")
-    public String getPower() {
-        return power;
-    }
-
-    public void setPower(String power) {
-        this.power = power;
+        return Objects.hash(id, userid, postslist, operator, createtime, updatetime, remark);
     }
 }

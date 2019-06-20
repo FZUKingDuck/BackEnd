@@ -12,4 +12,6 @@ public interface ReplyDao extends JpaRepository<ReplyEntity,String> {
     public void deleteReplyEntitiesByPostsid(String posts);
     public Page<ReplyEntity> findAllByPostsidIn(String postsid, Pageable page);
     public void deleteByPostsidEquals(String posts);
+    public Page<ReplyEntity> findAllByUserIn(String user,Pageable page);
+
 }

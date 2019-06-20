@@ -18,6 +18,8 @@ public class DateUtil {
 
     }
 
+
+
     //获取时间
     public static Timestamp getTime() {
         return new Timestamp(new Date().getTime());

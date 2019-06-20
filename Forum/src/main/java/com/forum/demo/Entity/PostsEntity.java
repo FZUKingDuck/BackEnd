@@ -12,6 +12,8 @@ public class PostsEntity {
     private String title;
     private String type;
     private String info;
+    private int number;
+    private int readnum;
     private String authority;
     private String operator;
     private Timestamp creattime;
@@ -69,6 +71,26 @@ public class PostsEntity {
     }
 
     @Basic
+    @Column(name = "number")
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    @Basic
+    @Column(name = "readnum")
+    public int getReadnum() {
+        return readnum;
+    }
+
+    public void setReadnum(int readnum) {
+        this.readnum = readnum;
+    }
+
+    @Basic
     @Column(name = "authority")
     public String getAuthority() {
         return authority;
@@ -123,7 +145,9 @@ public class PostsEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         PostsEntity that = (PostsEntity) o;
-        return Objects.equals(id, that.id) &&
+        return number == that.number &&
+                readnum == that.readnum &&
+                Objects.equals(id, that.id) &&
                 Objects.equals(userid, that.userid) &&
                 Objects.equals(title, that.title) &&
                 Objects.equals(type, that.type) &&
@@ -137,6 +161,6 @@ public class PostsEntity {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, userid, title, type, info, authority, operator, creattime, updatetime, remark);
+        return Objects.hash(id, userid, title, type, info, number, readnum, authority, operator, creattime, updatetime, remark);
     }
 }

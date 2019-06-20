@@ -1,7 +1,6 @@
 package com.forum.demo.Entity;
 
 import javax.persistence.*;
-import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.Objects;
 
@@ -12,7 +11,7 @@ public class UserInfoEntity {
     private String customid;
     private String name;
     private int sex;
-    private Date birth;
+    private Timestamp birth;
     private String signature;
     private String city;
     private String operator;
@@ -62,11 +61,11 @@ public class UserInfoEntity {
 
     @Basic
     @Column(name = "birth")
-    public Date getBirth() {
+    public Timestamp getBirth() {
         return birth;
     }
 
-    public void setBirth(Date birth) {
+    public void setBirth(Timestamp birth) {
         this.birth = birth;
     }
 

@@ -47,7 +47,7 @@ public class LoginAspect {
         System.out.println(username);
         String value = redisOperator.get(key);
 
-        if(null==value){
+        if(!StringUtils.checkKey(value)){
             return JsonResult.fail();
         }
         else {

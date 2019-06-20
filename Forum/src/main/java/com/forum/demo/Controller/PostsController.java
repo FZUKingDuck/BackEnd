@@ -52,13 +52,13 @@ public class PostsController {
 
 
     //获取帖子的列表
-    //type：帖子的类型    pageNumber：页码
+    //type：帖子的类型    pageNumber：页码,rule:排序规则：creattime,read,count
     //返回指定类型的帖子的数组
     @GetMapping(value = "/getPostsList")
-    public Result getPostsList(@PathParam("type")String type,@PathParam("pageNumber")String pageNumber){
+    public Result getPostsList(@PathParam("type")String type,@PathParam("pageNumber")String pageNumber,@PathParam("rule")String rule){
         Result result = new Result();
 
-        if(!StringUtils.checkKey(type)||!StringUtils.checkKey(pageNumber)){
+        if(!StringUtils.checkKey(type)||!StringUtils.checkKey(pageNumber)||!StringUtils.checkKey(rule)){
             result.setNullFalse();
             return result;
         }
@@ -70,8 +70,14 @@ public class PostsController {
                 return result;
             }
 
-            //创建根据发帖时间排序的分页查询规则
-            PageRequest page = PageRequest.of(number,15, Sort.Direction.DESC,"creattime");
+            if(!rule.equals("creattime")&&!rule.equals("number")&&!rule.equals("readnum")){
+                result.setFalse(201,"排列规则错误");
+                return result;
+            }
+
+            System.out.println(rule);
+            //前端返回的规则进行查询
+            PageRequest page = PageRequest.of(number,15, Sort.Direction.DESC,rule);
             //获取数据，返回
             List<PostsEntity> list = postsDao.findAllByTypeIn(type,page);
             result.setOK("ok",list);
@@ -127,6 +133,7 @@ public class PostsController {
     }
 
     //获取指定帖子的信息
+
     @GetMapping(value = "/getPostsInfo")
     public Result getPostsInfo(@PathParam("id")String id) {
         Result result = new Result();
@@ -136,18 +143,27 @@ public class PostsController {
             return result;
         }
 
+        try {
+            Optional<PostsEntity> res = postsDao.findById(id);
+            if (!res.isPresent()) {
+                result.setFalse(201, "无此帖子");
+                return result;
 
-        Optional<PostsEntity> res = postsDao.findById(id);
-        if(res==null||!res.isPresent()){
-            result.setFalse(201,"无此帖子");
+            }
+            PostsEntity postsEntity = res.get();
+            int count = Integer.valueOf(postsEntity.getNumber()) + 1;
+            System.out.println(postsEntity);
+            String countstr = String.valueOf(count);
+            postsEntity.setNumber(count);
+            postsDao.save(postsEntity);
+
+            result.setOK("获取成功", postsEntity);
             return result;
-
+        }catch (Exception e){
+            e.printStackTrace();
+            result.setSysFalse();
+            return result;
         }
-        PostsEntity postsEntity = res.get();
-
-        result.setOK("获取成功",postsEntity);
-        return result;
-
     }
 
     //发帖
@@ -178,12 +194,16 @@ public class PostsController {
 
             PostsEntity postsEntity = new PostsEntity();
 
+            String zero = "0";
+
             //数据初始化
             postsEntity.setId(DateUtil.getIdFromDate());
             postsEntity.setUserid(userid);
             postsEntity.setTitle(title);
             postsEntity.setType(type);
             postsEntity.setInfo(info);
+            postsEntity.setReadnum(0);
+            postsEntity.setNumber(0);
             postsEntity.setAuthority(authority);
             postsEntity.setCreattime(DateUtil.getTime());
             postsEntity.setUpdatetime(DateUtil.getTime());
@@ -203,6 +223,7 @@ public class PostsController {
     }
 
     //回复帖子
+    @Transactional
     @MonitorRequest
     @LogPointCut
     @PostMapping(value = "/replyPosts")
@@ -224,6 +245,8 @@ public class PostsController {
                     return result;
                 }
 
+
+
                 Optional<CustomEntity> resCus = customDao.findById(user);
                 if(resCus==null||!resCus.isPresent()){
                     result.setFalse(201,"无此用户");
@@ -235,6 +258,11 @@ public class PostsController {
                     result.setFalse(201,"楼层错误");
                     return  result;
                 }
+
+                PostsEntity postsEntity  = resposts.get();
+                int num = postsEntity.getReadnum() + 1;
+                postsEntity.setReadnum(num);
+                postsDao.save(postsEntity);
 
                 ReplyEntity replyEntity = new ReplyEntity();
                 replyEntity.setId(DateUtil.getIdFromDate());
