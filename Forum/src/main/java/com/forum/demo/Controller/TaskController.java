@@ -1,5 +1,6 @@
 package com.forum.demo.Controller;
 
+import com.forum.demo.Annotation.LogPointCut;
 import com.forum.demo.Annotation.MonitorRequest;
 import com.forum.demo.DAO.CustomDao;
 import com.forum.demo.DAO.TaskDao;
@@ -15,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -38,13 +40,15 @@ public class TaskController {
     @Autowired
     TaskListDao taskListDao;
     //type：分类类型    pageNumber：页码
-  public Result getTaskList(@PathParam("sorttype")String type,@PathParam("pageNumber")String pageNumber){
+    @GetMapping(value = "/getTaskList")
+    @LogPointCut
+  public Result getTaskList(@PathParam("sorttype")String sorttype,@PathParam("pageNumber")String pageNumber){
       Result result = new Result();
       //pageNumber 页面  转换为number int  和Pageable page
 
 
 
-      if(!StringUtils.checkKey(type)){
+      if(!StringUtils.checkKey(sorttype)){
           result.setNullFalse();
           return result;
       }
@@ -55,7 +59,7 @@ public class TaskController {
               return result;
           }
 
-          PageRequest page = PageRequest.of(number,15, Sort.Direction.DESC,type);
+          PageRequest page = PageRequest.of(number,15, Sort.Direction.DESC,"type");
           if(null ==page){
               result.setFalse(201,"类型错误");
               return result;
@@ -131,7 +135,7 @@ public class TaskController {
       }
   }
     @MonitorRequest
-    @PostMapping(value = "/myTask")
+    @GetMapping(value = "/myTask")
     public Result myTask(@PathParam("user")String user, @PathParam("pageNumber")String pageNumber) {
         Result result = new Result();
         if (!StringUtils.checkKey(user)) {
