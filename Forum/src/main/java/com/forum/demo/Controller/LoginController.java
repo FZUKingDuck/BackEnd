@@ -11,6 +11,7 @@ import com.forum.demo.UtilTool.DateUtil;
 import com.forum.demo.UtilTool.RedisOperator;
 import com.forum.demo.UtilTool.StringUtils;
 import org.apache.catalina.User;
+import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.websocket.server.PathParam;
+import java.io.File;
 import java.sql.Date;
 import java.util.Optional;
 
@@ -117,7 +119,8 @@ public class LoginController {
             UserInfoEntity userInfoEntity = new UserInfoEntity();
             userInfoEntity.setId(DateUtil.getIdFromDate());
             userInfoEntity.setCity("未知");
-            userInfoEntity.setSignature("");
+            userInfoEntity.setSignature("无");
+            userInfoEntity.setOperator("000000");
             userInfoEntity.setSex(0);
             userInfoEntity.setName(customEntity.getName());
             userInfoEntity.setCustomid(customEntity.getId());
@@ -127,7 +130,11 @@ public class LoginController {
 
             userInfoDao.save(userInfoEntity);
 
-
+            String pathHead = "/root/web/image/";
+            String oldurl = pathHead + "templete.jpg";
+            File old  = new File(oldurl);
+            File file = new File(pathHead+userInfoEntity.getId()+".jpg");
+            FileUtils.copyFile(old,file);
 
             result.setOK("注册成功",userInfoEntity.getId());
 

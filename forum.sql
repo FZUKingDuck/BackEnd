@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2019-06-21 01:43:39
+Date: 2019-06-21 14:17:30
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -103,6 +103,27 @@ INSERT INTO `custom` VALUES ('15586219479869', '13067272181', '0', '123456', '00
 INSERT INTO `custom` VALUES ('15586219559692', '1306727218', '1', '123456', '000000', '2019-05-23 00:00:00', '2019-05-23 00:00:00', '1');
 
 -- ----------------------------
+-- Table structure for download_info
+-- ----------------------------
+DROP TABLE IF EXISTS `download_info`;
+CREATE TABLE `download_info` (
+  `id` varchar(255) NOT NULL,
+  `type` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `path` varchar(255) NOT NULL,
+  `operator` varchar(255) NOT NULL,
+  `createtime` datetime NOT NULL,
+  `updatetime` datetime NOT NULL,
+  `remark` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of download_info
+-- ----------------------------
+INSERT INTO `download_info` VALUES ('15610952434269', 'html', '测试下载文件', '123456.zip', '000000', '2019-06-21 05:34:03', '2019-06-21 05:34:03', null);
+
+-- ----------------------------
 -- Table structure for exam
 -- ----------------------------
 DROP TABLE IF EXISTS `exam`;
@@ -166,6 +187,7 @@ CREATE TABLE `favorite` (
 -- ----------------------------
 -- Records of favorite
 -- ----------------------------
+INSERT INTO `favorite` VALUES ('15586219479869', '15586219479869', '15610475270537', '15586219479869', '2019-06-21 13:58:48', '2019-06-21 13:58:52', null);
 
 -- ----------------------------
 -- Table structure for friend
@@ -361,7 +383,7 @@ CREATE TABLE `user_info` (
 -- ----------------------------
 -- Records of user_info
 -- ----------------------------
-INSERT INTO `user_info` VALUES ('15586219479869', '15586219479869', '测试账号1', '0', '2019-05-23 00:00:00', '测试', '福州', '15586219479869', '2019-05-23 22:54:07', '2019-05-23 22:54:09', '');
+INSERT INTO `user_info` VALUES ('15586219479869', '15586219479869', '测试成员1', '1', '2019-05-22 16:00:00', '我是一个测试的沙狗', '北京', '15586219479869', '2019-05-23 22:54:07', '2019-05-23 22:54:09', '');
 
 -- ----------------------------
 -- Table structure for watched

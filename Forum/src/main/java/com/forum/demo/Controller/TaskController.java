@@ -15,12 +15,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.websocket.server.PathParam;
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,25 +39,25 @@ public class TaskController {
 
     @Autowired
     TaskListDao taskListDao;
+    @GetMapping(value = "/getTaskList")
     //type：分类类型    pageNumber：页码
-  public Result getTaskList(@PathParam("sorttype")String type,@PathParam("pageNumber")String pageNumber){
+  public Result getTaskList(@PathParam("sorttype")String sorttype,@PathParam("pageNumber")String pageNumber){
       Result result = new Result();
       //pageNumber 页面  转换为number int  和Pageable page
 
 
-
-      if(!StringUtils.checkKey(type)){
+      if(!StringUtils.checkKey(sorttype)){
           result.setNullFalse();
           return result;
       }
       try {
           int number = Integer.valueOf(pageNumber);
-          if(number<1){
+          if(number<0){
               result.setFalse(201,"页码错误");
               return result;
           }
 
-          PageRequest page = PageRequest.of(number,15, Sort.Direction.DESC,type);
+          PageRequest page = PageRequest.of(number,15, Sort.Direction.DESC,sorttype);
           if(null ==page){
               result.setFalse(201,"类型错误");
               return result;
@@ -63,7 +65,7 @@ public class TaskController {
 
           Page<TaskEntity> respage= taskDao.findAll(page);
           if (!respage.hasContent()){
-              result.setSysFalse();
+              result.setOK("获取成功",new ArrayList<TaskEntity>());
               return result;
           }
 

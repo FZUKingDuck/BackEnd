@@ -2,13 +2,11 @@ package com.forum.demo.Controller;
 
 import com.forum.demo.Annotation.LogPointCut;
 import com.forum.demo.Annotation.MonitorRequest;
+import com.forum.demo.DAO.FavoriteDao;
 import com.forum.demo.DAO.PostsDao;
 import com.forum.demo.DAO.ReplyDao;
 import com.forum.demo.DAO.UserInfoDao;
-import com.forum.demo.Entity.ImageInfoEntity;
-import com.forum.demo.Entity.PostsEntity;
-import com.forum.demo.Entity.ReplyEntity;
-import com.forum.demo.Entity.UserInfoEntity;
+import com.forum.demo.Entity.*;
 import com.forum.demo.ResponseResult.Result;
 import com.forum.demo.UtilTool.DateUtil;
 import com.forum.demo.UtilTool.StringUtils;
@@ -19,10 +17,12 @@ import org.springframework.data.domain.Sort;
 import org.springframework.http.MediaType;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.websocket.server.PathParam;
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,6 +40,9 @@ public class UserInfoController {
 
     @Autowired
     ReplyDao replyDao;
+
+    @Autowired
+    FavoriteDao favoriteDao;
 
     //根据用户的 id获取用户的信息
     //需要做验证
@@ -154,7 +157,11 @@ public class UserInfoController {
 
              //获取数据
              Page<ReplyEntity> list = replyDao.findAllByUserIn(userid,page);
-             result.setOK("获取成功",list);
+             if(!list.hasContent()){
+                 result.setOK("获取成功",new ArrayList<>());
+             }
+             else
+                result.setOK("获取成功",list.getContent());
              return  result;
 
          }
@@ -208,6 +215,46 @@ public class UserInfoController {
     }
 
 
+    //更新用户头像
+    @LogPointCut
+    @MonitorRequest
+    @PostMapping(value = "/updateImage")
+    public Result updateImage(@PathParam("userid")String userid, @PathParam("file")MultipartFile file){
+        Result result = new Result();
+        if(!StringUtils.checkKey(userid)||file.isEmpty()){
+            result.setNullFalse();
+            return result;
+        }
+
+        try{
+
+            Optional<UserInfoEntity> userCheck = userInfoDao.findById(userid);
+            if(!userCheck.isPresent()){
+                result.setFalse(201,"无此用户");
+                return result;
+            }
+
+            String pathHead = "/root/web/image/";
+            File old = new File(pathHead+userid+".jpg");
+            if(!old.exists()){
+                result.setFalse(201,"文件打开错误");
+                return result;
+            }
+
+            file.transferTo(old);
+            result.setOK("更新成功",userid);
+            return result;
+        }
+        catch (Exception e){
+            result.setSysFalse();
+            e.printStackTrace();
+            return result;
+        }
+
+
+    }
+
+
     //返回用户头像
     @GetMapping(value = "/getImage" , produces = MediaType.IMAGE_JPEG_VALUE)
     public byte[] getImage(@PathParam("id")String id) {
@@ -237,4 +284,42 @@ public class UserInfoController {
         }
 
     }
+
+    //获取自己的所有收藏的帖子
+    @PostMapping(value = "/getFavorite")
+    public Result getFavorite(@PathParam("userid")String userid){
+
+        Result result = new Result();
+
+        if(!StringUtils.checkKey(userid)){
+            result.setNullFalse();
+            return result;
+
+        }
+
+        try {
+            List<PostsEntity> postsEntityList = new ArrayList<>();
+            List<FavoriteEntity> favoriteEntities = favoriteDao.findFavoriteEntitiesByUserid(userid);
+
+            for (FavoriteEntity fa:favoriteEntities) {
+                Optional<PostsEntity> postsCheck = postsDao.findById(fa.getPostslist());
+                if(postsCheck.isPresent()){
+                    PostsEntity postsEntity = postsCheck.get();
+                    postsEntityList.add(postsEntity);
+                }
+            }
+
+            result.setOK("获取成功",postsEntityList);
+            return result;
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+            result.setSysFalse();
+            return result;
+        }
+
+    }
+
+
 }

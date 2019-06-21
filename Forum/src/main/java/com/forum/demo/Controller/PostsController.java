@@ -3,13 +3,8 @@ package com.forum.demo.Controller;
 
 import com.forum.demo.Annotation.LogPointCut;
 import com.forum.demo.Annotation.MonitorRequest;
-import com.forum.demo.DAO.CustomDao;
-import com.forum.demo.DAO.PostsDao;
-import com.forum.demo.DAO.ReplyDao;
-import com.forum.demo.DAO.TaskDao;
-import com.forum.demo.Entity.CustomEntity;
-import com.forum.demo.Entity.PostsEntity;
-import com.forum.demo.Entity.ReplyEntity;
+import com.forum.demo.DAO.*;
+import com.forum.demo.Entity.*;
 import com.forum.demo.ResponseResult.Result;
 import com.forum.demo.UtilTool.DateUtil;
 import com.forum.demo.UtilTool.RedisOperator;
@@ -27,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.websocket.server.PathParam;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -49,6 +45,12 @@ public class PostsController {
 
     @Autowired
     ReplyDao replyDao;
+
+    @Autowired
+    FavoriteDao favoriteDao;
+
+    @Autowired
+    UserInfoDao userInfoDao;
 
 
     //获取帖子的列表
@@ -469,5 +471,107 @@ public class PostsController {
     }
 
 
+    //收藏帖子
+    //帖子id，用户id
+    @PostMapping(value = "/favoritePosts")
+    @MonitorRequest
+    @LogPointCut
+    public Result favoritePosts(@PathParam("userid")String userid,@PathParam("postsid")String postsid){
+        Result result  = new Result();
+
+        if(!StringUtils.checkKey(userid)||!StringUtils.checkKey(postsid)){
+            result.setNullFalse();
+            return result;
+        }
+
+        try{
+            Optional<UserInfoEntity> usercheck = userInfoDao.findById(userid);
+            if(!usercheck.isPresent()){
+                result.setFalse(201,"无此用户");
+                return result;
+            }
+
+            Optional<PostsEntity> postscheck = postsDao.findById(postsid);
+            if(!postscheck.isPresent()){
+                result.setFalse(201,"无此帖子");
+                return result;
+            }
+
+            FavoriteEntity favoriteEntity = new FavoriteEntity();
+            favoriteEntity.setId(DateUtil.getIdFromDate());
+            favoriteEntity.setUserid(userid);
+            favoriteEntity.setPostslist(postsid);
+            favoriteEntity.setCreatetime(DateUtil.getTime());
+            favoriteEntity.setUpdatetime(DateUtil.getTime());
+            favoriteEntity.setOperator("000000");
+            favoriteDao.save(favoriteEntity);
+
+            result.setOK("收藏成功",favoriteEntity.getId());
+            return result;
+
+
+        }
+        catch (Exception e){
+            result.setSysFalse();
+            e.printStackTrace();
+            return result;
+        }
+
+
+    }
+
+
+    //取消收藏
+    @PostMapping(value = "/deleteFavorite")
+    @MonitorRequest
+    @Transactional
+    @LogPointCut
+    public Result deleteFavorite(@PathParam("userid")String userid,@PathParam("favoriteid")String favoriteid){
+        Result result  = new Result();
+
+        if(!StringUtils.checkKey(userid)||!StringUtils.checkKey(favoriteid)){
+            result.setNullFalse();
+            return result;
+        }
+
+        try{
+            Optional<UserInfoEntity> usercheck = userInfoDao.findById(userid);
+            if(!usercheck.isPresent()){
+                result.setFalse(201,"无此用户");
+                return result;
+            }
+
+            Optional<FavoriteEntity> favoriteCheck = favoriteDao.findById(favoriteid);
+            if(!favoriteCheck.isPresent()){
+                result.setFalse(201,"您未收藏");
+                return result;
+            }
+
+            FavoriteEntity favoriteEntity = favoriteCheck.get();
+            if(!favoriteEntity.getUserid().equals(userid)){
+                result.setFalse(201,"无此权限");
+                return result;
+            }
+
+            favoriteDao.delete(favoriteEntity);
+            result.setOK("删除成功",true);
+            return  result;
+
+
+        }
+        catch (Exception e){
+            result.setSysFalse();
+            e.printStackTrace();
+            return result;
+        }
+
+
+    }
+
 
 }
+
+
+
+
+
