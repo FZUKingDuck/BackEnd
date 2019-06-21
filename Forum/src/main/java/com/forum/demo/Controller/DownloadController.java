@@ -7,6 +7,7 @@ import com.forum.demo.Entity.DownloadInfoEntity;
 import com.forum.demo.ResponseResult.Result;
 import com.forum.demo.UtilTool.DateUtil;
 import com.forum.demo.UtilTool.StringUtils;
+import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.PageRequest;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.websocket.server.PathParam;
 import java.awt.*;
@@ -147,6 +149,49 @@ public class DownloadController {
         catch (Exception e){
             result.setSysFalse();
             e.printStackTrace();
+            return result;
+        }
+
+    }
+
+    //上传
+    @PostMapping(value = "/upload")
+    public Result upload(@PathParam("type")String type, @PathParam("name")String name, @PathParam("file")MultipartFile file){
+
+        Result result = new Result();
+        if(!StringUtils.checkKey(type)||!StringUtils.checkKey(name)||file==null){
+            result.setNullFalse();
+            return result;
+        }
+
+        try {
+
+            String pathHead = "/root/web/"+type+"/";
+            String path = file.getName();
+            DownloadInfoEntity downloadInfoEntity = new DownloadInfoEntity();
+
+            File dest = new File(pathHead+path);
+            if(!dest.exists()){
+                result.setSysFalse();
+                return result;
+            }
+
+            file.transferTo(dest);
+            downloadInfoEntity.setId(DateUtil.getIdFromDate());
+            downloadInfoEntity.setType(type);
+            downloadInfoEntity.setPath(path);
+            downloadInfoEntity.setName(name);
+            downloadInfoEntity.setCreatetime(DateUtil.getTime());
+            downloadInfoEntity.setUpdatetime(DateUtil.getTime());
+            downloadInfoEntity.setOperator("000000");
+
+            downloadInfoDao.save(downloadInfoEntity);
+            result.setOK("上传成功",true);
+            return result;
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            result.setSysFalse();
             return result;
         }
 

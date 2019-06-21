@@ -4,9 +4,11 @@ import com.forum.demo.Annotation.MonitorRequest;
 import com.forum.demo.DAO.CustomDao;
 import com.forum.demo.DAO.TaskDao;
 import com.forum.demo.DAO.TaskListDao;
+import com.forum.demo.DAO.UserInfoDao;
 import com.forum.demo.Entity.CustomEntity;
 import com.forum.demo.Entity.TaskEntity;
 import com.forum.demo.Entity.TaskListEntity;
+import com.forum.demo.Entity.UserInfoEntity;
 import com.forum.demo.ResponseResult.Result;
 import com.forum.demo.UtilTool.DateUtil;
 import com.forum.demo.UtilTool.StringUtils;
@@ -38,7 +40,11 @@ public class TaskController {
     TaskDao taskDao;
 
     @Autowired
+    UserInfoDao userInfoDao;
+
+    @Autowired
     TaskListDao taskListDao;
+
     @GetMapping(value = "/getTaskList")
     //type：分类类型    pageNumber：页码
   public Result getTaskList(@PathParam("sorttype")String sorttype,@PathParam("pageNumber")String pageNumber){
@@ -57,19 +63,13 @@ public class TaskController {
               return result;
           }
 
-          PageRequest page = PageRequest.of(number,15, Sort.Direction.DESC,sorttype);
+          PageRequest page = PageRequest.of(number,10, Sort.Direction.DESC,"creattime");
           if(null ==page){
               result.setFalse(201,"类型错误");
               return result;
           }
 
-          Page<TaskEntity> respage= taskDao.findAll(page);
-          if (!respage.hasContent()){
-              result.setOK("获取成功",new ArrayList<TaskEntity>());
-              return result;
-          }
-
-          List<TaskEntity>list = respage.getContent();
+          List<TaskEntity> list= taskDao.findAllByTypeIn(sorttype,page);
 
           result.setOK("查找成功",list);
           return result;
@@ -85,7 +85,7 @@ public class TaskController {
 
   //status:0 发布待审核 1 审核通过 2未通过审核
   //type:最新任务 热门任务 系统任务 付费任务
-  public Result publishTask(@PathParam("id")String id,@PathParam("user")String user,
+  public Result publishTask(@PathParam("user")String user,
   @PathParam("type")String type,@PathParam("title")String title,@PathParam("status")String status
   ,@PathParam("money")String money,@PathParam("info")String info,@PathParam("endtime")String endtime
  ){
@@ -101,7 +101,7 @@ public class TaskController {
           return result;
       }
       try{
-          Optional<CustomEntity> cus = customDao.findById(user);
+          Optional<UserInfoEntity> cus =userInfoDao.findById(user);
           if(cus==null||!cus.isPresent())
           {
               result.setFalse(201,"无此用户");
@@ -117,13 +117,14 @@ public class TaskController {
           taskEntity.setType(type);
           taskEntity.setTitle(title);
           taskEntity.setStatus(status);
-          taskEntity.setStatus(status);
           taskEntity.setMoney(sum);
           taskEntity.setInfo(info);
           taskEntity.setEndtime(DateUtil.changeTime(endtime));
-
+          taskEntity.setCreattime(DateUtil.getTime());
+          taskEntity.setUpdatetime(DateUtil.getTime());
+          taskEntity.setOperator(user);
           taskDao.save(taskEntity);
-          result.setOK("任务发布成功",taskEntity);
+          result.setOK("任务发布成功",taskEntity.getId());
           return  result;
       }
       catch (Exception e){
@@ -132,6 +133,8 @@ public class TaskController {
           return result;
       }
   }
+
+
     @MonitorRequest
     @PostMapping(value = "/myTask")
     public Result myTask(@PathParam("user")String user, @PathParam("pageNumber")String pageNumber) {
@@ -141,18 +144,18 @@ public class TaskController {
             return result;
         }
         try {
-            Optional<CustomEntity> cus = customDao.findById(user);
+            Optional<UserInfoEntity> cus = userInfoDao.findById(user);
             if (cus == null || !cus.isPresent()) {
                 result.setFalse(201, "无此用户");
                 return result;
             }
             int number = Integer.valueOf(pageNumber);
-            if(number<1){
+            if(number<0){
                 result.setFalse(201,"页码错误");
                 return result;
             }
 
-            PageRequest page = PageRequest.of(number,15, Sort.Direction.DESC,"creattime");
+            PageRequest page = PageRequest.of(number,10, Sort.Direction.DESC,"creattime");
             if(null ==page){
                 result.setFalse(201,"类型错误");
                 return result;
@@ -174,6 +177,8 @@ public class TaskController {
             return result;
         }
     }
+
+
     @MonitorRequest
     @PostMapping(value = "/undertakeTask")
     public  Result undertakeTask(@PathParam("user")String user,@PathParam("taskid")String taskid){
@@ -184,7 +189,7 @@ public class TaskController {
             return result;
         }
         try {
-            Optional<CustomEntity> cus = customDao.findById(user);
+            Optional<UserInfoEntity> cus = userInfoDao.findById(user);
             if (cus == null || !cus.isPresent()) {
                 result.setFalse(201, "无此用户");
                 return result;

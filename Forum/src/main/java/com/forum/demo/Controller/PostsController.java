@@ -188,8 +188,8 @@ public class PostsController {
 
         try {
             //检测是否有此用户
-            Optional<CustomEntity> res = customDao.findById(userid);
-            if(res==null||!res.isPresent()) {
+            Optional<UserInfoEntity> res = userInfoDao.findById(userid);
+            if(!res.isPresent()) {
                 result.setFalse(201, "无此用户");
                 return result;
             }
@@ -249,7 +249,7 @@ public class PostsController {
 
 
 
-                Optional<CustomEntity> resCus = customDao.findById(user);
+                Optional<UserInfoEntity> resCus = userInfoDao.findById(user);
                 if(resCus==null||!resCus.isPresent()){
                     result.setFalse(201,"无此用户");
                     return result;
@@ -448,7 +448,7 @@ public class PostsController {
                 return result;
             }
 
-            PageRequest page = PageRequest.of(num,15, Sort.Direction.DESC,"creattime");
+            PageRequest page = PageRequest.of(num,10, Sort.Direction.DESC,"creattime");
 
             List<PostsEntity> list = postsDao.findAllByTitleIn(value,page);
 
