@@ -1,7 +1,7 @@
 package com.forum.demo.Controller;
+import com.forum.demo.Annotation.MonitorRequest;
 import com.forum.demo.DAO.*;
-import com.forum.demo.Entity.ClassInfoEntity;
-import com.forum.demo.Entity.ClassTaskEntity;
+import com.forum.demo.Entity.*;
 import com.forum.demo.ResponseResult.Result;
 import com.forum.demo.UtilTool.DateUtil;
 import com.forum.demo.UtilTool.StringUtils;
@@ -29,6 +29,9 @@ public class ClassesController {
     ClassInfoDao classInfoDao;
 
     @Autowired
+    UserInfoDao userInfoDao;
+
+    @Autowired
     ClassMemberDao classMemberDao;
 
     @Autowired
@@ -49,7 +52,7 @@ public class ClassesController {
         }
 
         try{
-            Optional<ClassInfoEntity> cla =     classInfoDao.findAllById(id);
+            Optional<ClassInfoEntity> cla =   classInfoDao.findAllById(id);
             if(cla==null||!cla.isPresent()){
                 result.setFalse(201,"无此班级");
             }
@@ -148,6 +151,74 @@ public class ClassesController {
 
         }
         catch (Exception e){
+            e.printStackTrace();
+            result.setSysFalse();
+            return result;
+        }
+
+    }
+
+
+    @MonitorRequest
+    @RequestMapping(value = "/addStudent")
+    public Result addStudent(@PathParam("classid")String classid,@PathParam("user")String user) {
+        ClassMemberEntity classMemberEntity = new ClassMemberEntity();
+
+        Result result = new Result();
+
+        if (!StringUtils.checkKey(user) || !StringUtils.checkKey(classid) || !StringUtils.checkKey(user)) {
+            result.setNullFalse();
+            return result;
+        }
+        try {
+            Optional<UserInfoEntity> cus = userInfoDao.findById(user);
+            if (cus == null || !cus.isPresent()) {
+                result.setFalse(201, "无此用户");
+                return result;
+            }
+
+            classMemberEntity.setId(DateUtil.getIdFromDate());  //时间戳生成id
+            classMemberEntity.setId(classid);
+            classMemberEntity.setUser(user);
+            classMemberEntity.setOperator(user);
+            classMemberEntity.setCreattime(DateUtil.getTime());
+            classMemberEntity.setUpdatetime(DateUtil.getTime());
+            classMemberEntity.setStatus(0);
+
+            classMemberDao.save(classMemberEntity);
+            result.setOK("添加成功", classMemberEntity.getId());
+            return result;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            result.setSysFalse();
+            return result;
+        }
+    }
+
+
+    @MonitorRequest
+    @RequestMapping(value = "/deleteClassMember")
+    public Result deleteClassMember(@PathParam("id")String id)
+    {
+        Result result = new Result();
+
+        if(!StringUtils.checkKey(id)){
+            result.setNullFalse();
+            return result;
+        }
+
+        try{
+            Optional<ClassMemberEntity> member =classMemberDao.findById(id);
+            if(member == null||!member.isPresent()){
+                result.setFalse(201,"无此学生");
+                return  result;
+            }
+            ClassMemberEntity classMemberEntity = member.get();
+            classMemberDao.delete(classMemberEntity);
+            result.setOK("删除成功",true);
+            return result;
+        }catch (Exception e){
             e.printStackTrace();
             result.setSysFalse();
             return result;
