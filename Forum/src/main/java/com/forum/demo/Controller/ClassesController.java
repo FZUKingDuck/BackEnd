@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.security.PermitAll;
 import javax.websocket.server.PathParam;
 import javax.xml.crypto.Data;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -178,7 +179,7 @@ public class ClassesController {
             }
 
             classMemberEntity.setId(DateUtil.getIdFromDate());  //时间戳生成id
-            classMemberEntity.setId(classid);
+            classMemberEntity.setClassid(classid);
             classMemberEntity.setUser(user);
             classMemberEntity.setOperator(user);
             classMemberEntity.setCreattime(DateUtil.getTime());
@@ -198,7 +199,7 @@ public class ClassesController {
 
 
     @MonitorRequest
-    @RequestMapping(value = "/deleteClassMember")
+    @PostMapping(value = "/deleteClassMember")
     public Result deleteClassMember(@PathParam("id")String id)
     {
         Result result = new Result();
@@ -209,18 +210,90 @@ public class ClassesController {
         }
 
         try{
-            Optional<ClassMemberEntity> member =classMemberDao.findById(id);
-            if(member == null||!member.isPresent()){
+            ClassMemberEntity classMemberEntity = classMemberDao.findClassMemberEntityByUser(id);
+            if(classMemberEntity == null){
                 result.setFalse(201,"无此学生");
                 return  result;
             }
-            ClassMemberEntity classMemberEntity = member.get();
+
             classMemberDao.delete(classMemberEntity);
             result.setOK("删除成功",true);
             return result;
         }catch (Exception e){
             e.printStackTrace();
             result.setSysFalse();
+            return result;
+        }
+
+    }
+
+    @MonitorRequest
+    @RequestMapping(value = "/getStudentList")
+
+    public Result getStudentList(@PathParam("id")String id,@PathParam("pageNumber")String pageNumber){//班级id 索引学生列表
+        Result result = new Result();
+        if(!StringUtils.checkKey(id))
+        {
+            result.setNullFalse();
+            return result;
+        }
+
+        try{
+            Optional<ClassInfoEntity> cla = classInfoDao.findById(id);
+            if(cla==null||!cla.isPresent()){
+                result.setFalse(201,"无此班级");
+            }
+            int number=Integer.valueOf(pageNumber);
+            PageRequest page=PageRequest.of(number,10, Sort.Direction.DESC,"creattime");
+            List<ClassMemberEntity> classMemberPage=classMemberDao.findClassMemberEntitiesByClassid(id);
+            List<UserInfoEntity> list = new ArrayList<>();
+            for (ClassMemberEntity classMemberEntity:classMemberPage
+                 ) {
+                    Optional<UserInfoEntity> user = userInfoDao.findById(classMemberEntity.getUser());
+                    if(user.isPresent())
+                        list.add(user.get());
+            }
+
+            result.setOK("班级成员查找成功",list);
+            return result;
+        }catch (Exception e) {
+            e.printStackTrace();
+            result.setSysFalse();
+            return result;
+        }
+    }
+
+    @PostMapping(value = "/getClassInfoByUser")
+    public Result getClassId(@PathParam("userid")String userid){
+        Result result = new Result();
+        if (!StringUtils.checkKey(userid)){
+            result.setNullFalse();
+            return result;
+        }
+
+        try {
+            ClassMemberEntity classMemberEntity = classMemberDao.findClassMemberEntityByUser(userid);
+            if(classMemberEntity == null){
+                result.setFalse(201,"无此学生");
+                return result;
+            }
+
+            String classid = classMemberEntity.getClassid();
+
+            Optional<ClassInfoEntity> classInfo = classInfoDao.findById(classid);
+            if(!classInfo.isPresent()){
+                result.setSysFalse();
+                return result;
+            }
+
+            ClassInfoEntity classInfoEntity = classInfo.get();
+            result.setOK("获取成功",classInfoEntity);
+            return result;
+
+
+        }catch (Exception e){
+            result.setSysFalse();
+            e.printStackTrace();
             return result;
         }
 

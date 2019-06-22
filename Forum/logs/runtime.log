@@ -774,3 +774,364 @@
 2019-06-22 02:31:42.353  INFO 13604 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2019-06-22 02:31:42.356  INFO 13604 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2019-06-22 02:31:42.448  INFO 13604 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-06-22 14:09:02.123  INFO 23504 --- [main] com.forum.demo.ForumApplication          : Starting ForumApplication on FZUKingDuck with PID 23504 (F:\CODE\Forum\BackEnd\Forum\target\classes started by 叫猪学猪叫 in F:\CODE\Forum\BackEnd\Forum)
+2019-06-22 14:09:02.133  INFO 23504 --- [main] com.forum.demo.ForumApplication          : No active profile set, falling back to default profiles: default
+2019-06-22 14:09:04.899  INFO 23504 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-06-22 14:09:04.899  INFO 23504 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-22 14:09:05.138  INFO 23504 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 230ms. Found 17 repository interfaces.
+2019-06-22 14:09:05.174  INFO 23504 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-06-22 14:09:05.181  INFO 23504 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-22 14:09:05.266  INFO 23504 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ClassInfoDao.
+2019-06-22 14:09:05.267  INFO 23504 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ClassMemberDao.
+2019-06-22 14:09:05.267  INFO 23504 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ClassTaskDao.
+2019-06-22 14:09:05.268  INFO 23504 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.CustomDao.
+2019-06-22 14:09:05.269  INFO 23504 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.DownloadInfoDao.
+2019-06-22 14:09:05.270  INFO 23504 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ExamDao.
+2019-06-22 14:09:05.270  INFO 23504 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ExamInfoDao.
+2019-06-22 14:09:05.271  INFO 23504 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.FavoriteDao.
+2019-06-22 14:09:05.272  INFO 23504 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.FriendDao.
+2019-06-22 14:09:05.273  INFO 23504 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ImageInfoDao.
+2019-06-22 14:09:05.273  INFO 23504 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.PostsDao.
+2019-06-22 14:09:05.274  INFO 23504 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ReplyDao.
+2019-06-22 14:09:05.274  INFO 23504 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.TalkDao.
+2019-06-22 14:09:05.275  INFO 23504 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.TaskDao.
+2019-06-22 14:09:05.275  INFO 23504 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.TaskListDao.
+2019-06-22 14:09:05.276  INFO 23504 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.UserInfoDao.
+2019-06-22 14:09:05.277  INFO 23504 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.WatchedDao.
+2019-06-22 14:09:05.277  INFO 23504 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20ms. Found 0 repository interfaces.
+2019-06-22 14:09:06.632  INFO 23504 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2a1bfeb4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-22 14:09:07.630  INFO 23504 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-06-22 14:09:07.691  INFO 23504 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-06-22 14:09:07.691  INFO 23504 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-06-22 14:09:07.743  INFO 23504 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2019-06-22 14:09:07.744  INFO 23504 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-06-22 14:09:07.744  INFO 23504 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-06-22 14:09:07.852  INFO 23504 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2019-06-22 14:09:08.465  INFO 23504 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-06-22 14:09:08.465  INFO 23504 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 6179 ms
+2019-06-22 14:09:08.941  INFO 23504 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-06-22 14:09:09.050  INFO 23504 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2019-06-22 14:09:09.052  INFO 23504 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-06-22 14:09:09.409  INFO 23504 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-06-22 14:09:09.819  INFO 23504 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-06-22 14:09:10.203  INFO 23504 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-06-22 14:09:10.239  INFO 23504 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-06-22 14:09:13.550  INFO 23504 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-06-22 14:09:16.427  INFO 23504 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-06-22 14:09:16.510  WARN 23504 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-06-22 14:09:17.440  INFO 23504 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-06-22 14:09:17.442  INFO 23504 --- [main] com.forum.demo.ForumApplication          : Started ForumApplication in 16.98 seconds (JVM running for 21.059)
+2019-06-22 14:10:05.119  INFO 23504 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-06-22 14:10:05.120  INFO 23504 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-06-22 14:10:05.133  INFO 23504 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
+2019-06-22 14:10:05.416  INFO 23504 --- [http-nio-8080-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-06-22 14:10:44.529  INFO 23504 --- [http-nio-8080-exec-4] com.forum.demo.Aspect.LoginAspect        : check login
+2019-06-22 14:10:45.461  INFO 23504 --- [http-nio-8080-exec-4] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2019-06-22 14:10:45.463  INFO 23504 --- [http-nio-8080-exec-4] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2019-06-22 14:10:47.474  WARN 23504 --- [http-nio-8080-exec-4] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1048, SQLState: 23000
+2019-06-22 14:10:47.475 ERROR 23504 --- [http-nio-8080-exec-4] o.h.engine.jdbc.spi.SqlExceptionHelper   : Column 'classid' cannot be null
+2019-06-22 14:10:47.493 ERROR 23504 --- [http-nio-8080-exec-4] o.h.i.ExceptionMapperStandardImpl        : HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
+2019-06-22 14:11:52.211  INFO 17628 --- [main] com.forum.demo.ForumApplication          : Starting ForumApplication on FZUKingDuck with PID 17628 (F:\CODE\Forum\BackEnd\Forum\target\classes started by 叫猪学猪叫 in F:\CODE\Forum\BackEnd\Forum)
+2019-06-22 14:11:52.214  INFO 17628 --- [main] com.forum.demo.ForumApplication          : No active profile set, falling back to default profiles: default
+2019-06-22 14:11:53.018  INFO 17628 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-06-22 14:11:53.019  INFO 17628 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-22 14:11:53.123  INFO 17628 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 97ms. Found 17 repository interfaces.
+2019-06-22 14:11:53.136  INFO 17628 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-06-22 14:11:53.138  INFO 17628 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-22 14:11:53.153  INFO 17628 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ClassInfoDao.
+2019-06-22 14:11:53.154  INFO 17628 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ClassMemberDao.
+2019-06-22 14:11:53.154  INFO 17628 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ClassTaskDao.
+2019-06-22 14:11:53.154  INFO 17628 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.CustomDao.
+2019-06-22 14:11:53.155  INFO 17628 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.DownloadInfoDao.
+2019-06-22 14:11:53.155  INFO 17628 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ExamDao.
+2019-06-22 14:11:53.155  INFO 17628 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ExamInfoDao.
+2019-06-22 14:11:53.156  INFO 17628 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.FavoriteDao.
+2019-06-22 14:11:53.156  INFO 17628 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.FriendDao.
+2019-06-22 14:11:53.157  INFO 17628 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ImageInfoDao.
+2019-06-22 14:11:53.157  INFO 17628 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.PostsDao.
+2019-06-22 14:11:53.157  INFO 17628 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ReplyDao.
+2019-06-22 14:11:53.158  INFO 17628 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.TalkDao.
+2019-06-22 14:11:53.159  INFO 17628 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.TaskDao.
+2019-06-22 14:11:53.159  INFO 17628 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.TaskListDao.
+2019-06-22 14:11:53.161  INFO 17628 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.UserInfoDao.
+2019-06-22 14:11:53.161  INFO 17628 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.WatchedDao.
+2019-06-22 14:11:53.162  INFO 17628 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16ms. Found 0 repository interfaces.
+2019-06-22 14:11:53.549  INFO 17628 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d0573400] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-22 14:11:53.929  INFO 17628 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-06-22 14:11:53.950  INFO 17628 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-06-22 14:11:53.950  INFO 17628 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-06-22 14:11:53.958  INFO 17628 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2019-06-22 14:11:53.959  INFO 17628 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-06-22 14:11:53.959  INFO 17628 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-06-22 14:11:53.963  INFO 17628 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2019-06-22 14:11:54.156  INFO 17628 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-06-22 14:11:54.156  INFO 17628 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1899 ms
+2019-06-22 14:11:54.352  INFO 17628 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-06-22 14:11:54.415  INFO 17628 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2019-06-22 14:11:54.416  INFO 17628 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-06-22 14:11:54.542  INFO 17628 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-06-22 14:11:54.695  INFO 17628 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-06-22 14:11:54.848  INFO 17628 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-06-22 14:11:54.860  INFO 17628 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-06-22 14:11:55.746  INFO 17628 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-06-22 14:11:56.751  INFO 17628 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-06-22 14:11:56.787  WARN 17628 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-06-22 14:11:57.322  INFO 17628 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-06-22 14:11:57.324  INFO 17628 --- [main] com.forum.demo.ForumApplication          : Started ForumApplication in 5.597 seconds (JVM running for 7.413)
+2019-06-22 14:11:57.391  INFO 17628 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-06-22 14:11:57.391  INFO 17628 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-06-22 14:11:57.408  INFO 17628 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 17 ms
+2019-06-22 14:11:57.494  INFO 17628 --- [http-nio-8080-exec-1] com.forum.demo.Aspect.LoginAspect        : check login
+2019-06-22 14:11:57.652  INFO 17628 --- [http-nio-8080-exec-1] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2019-06-22 14:11:57.653  INFO 17628 --- [http-nio-8080-exec-1] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2019-06-22 14:12:53.437  INFO 17628 --- [http-nio-8080-exec-4] com.forum.demo.Aspect.LoginAspect        : check login
+2019-06-22 14:13:33.100  INFO 17628 --- [http-nio-8080-exec-6] com.forum.demo.Aspect.LoginAspect        : check login
+2019-06-22 14:13:38.215  INFO 17628 --- [http-nio-8080-exec-7] com.forum.demo.Aspect.LoginAspect        : check login
+2019-06-22 14:13:38.235  INFO 17628 --- [http-nio-8080-exec-7] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-06-22 14:14:43.869  INFO 3148 --- [main] com.forum.demo.ForumApplication          : Starting ForumApplication on FZUKingDuck with PID 3148 (F:\CODE\Forum\BackEnd\Forum\target\classes started by 叫猪学猪叫 in F:\CODE\Forum\BackEnd\Forum)
+2019-06-22 14:14:43.874  INFO 3148 --- [main] com.forum.demo.ForumApplication          : No active profile set, falling back to default profiles: default
+2019-06-22 14:14:44.730  INFO 3148 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-06-22 14:14:44.731  INFO 3148 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-22 14:14:44.835  INFO 3148 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 97ms. Found 17 repository interfaces.
+2019-06-22 14:14:44.849  INFO 3148 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-06-22 14:14:44.851  INFO 3148 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-22 14:14:44.868  INFO 3148 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ClassInfoDao.
+2019-06-22 14:14:44.869  INFO 3148 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ClassMemberDao.
+2019-06-22 14:14:44.869  INFO 3148 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ClassTaskDao.
+2019-06-22 14:14:44.870  INFO 3148 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.CustomDao.
+2019-06-22 14:14:44.870  INFO 3148 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.DownloadInfoDao.
+2019-06-22 14:14:44.870  INFO 3148 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ExamDao.
+2019-06-22 14:14:44.871  INFO 3148 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ExamInfoDao.
+2019-06-22 14:14:44.871  INFO 3148 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.FavoriteDao.
+2019-06-22 14:14:44.871  INFO 3148 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.FriendDao.
+2019-06-22 14:14:44.872  INFO 3148 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ImageInfoDao.
+2019-06-22 14:14:44.872  INFO 3148 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.PostsDao.
+2019-06-22 14:14:44.873  INFO 3148 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ReplyDao.
+2019-06-22 14:14:44.873  INFO 3148 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.TalkDao.
+2019-06-22 14:14:44.874  INFO 3148 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.TaskDao.
+2019-06-22 14:14:44.874  INFO 3148 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.TaskListDao.
+2019-06-22 14:14:44.875  INFO 3148 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.UserInfoDao.
+2019-06-22 14:14:44.876  INFO 3148 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.WatchedDao.
+2019-06-22 14:14:44.876  INFO 3148 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16ms. Found 0 repository interfaces.
+2019-06-22 14:14:45.255  INFO 3148 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8ad9c5dd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-22 14:14:45.602  INFO 3148 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-06-22 14:14:45.622  INFO 3148 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-06-22 14:14:45.622  INFO 3148 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-06-22 14:14:45.628  INFO 3148 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2019-06-22 14:14:45.628  INFO 3148 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-06-22 14:14:45.628  INFO 3148 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-06-22 14:14:45.632  INFO 3148 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2019-06-22 14:14:45.823  INFO 3148 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-06-22 14:14:45.824  INFO 3148 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1902 ms
+2019-06-22 14:14:46.029  INFO 3148 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-06-22 14:14:46.081  INFO 3148 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2019-06-22 14:14:46.082  INFO 3148 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-06-22 14:14:46.187  INFO 3148 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-06-22 14:14:46.297  INFO 3148 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-06-22 14:14:46.428  INFO 3148 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-06-22 14:14:46.437  INFO 3148 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-06-22 14:14:47.259  INFO 3148 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-06-22 14:14:48.228  INFO 3148 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-06-22 14:14:48.261  WARN 3148 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-06-22 14:14:48.719  INFO 3148 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-06-22 14:14:48.721  INFO 3148 --- [main] com.forum.demo.ForumApplication          : Started ForumApplication in 5.344 seconds (JVM running for 7.013)
+2019-06-22 14:14:55.397  INFO 3148 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-06-22 14:14:55.397  INFO 3148 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-06-22 14:14:55.414  INFO 3148 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 17 ms
+2019-06-22 14:14:55.464  INFO 3148 --- [http-nio-8080-exec-1] com.forum.demo.Aspect.LoginAspect        : check login
+2019-06-22 14:14:55.585  INFO 3148 --- [http-nio-8080-exec-1] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2019-06-22 14:14:55.586  INFO 3148 --- [http-nio-8080-exec-1] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2019-06-22 14:14:57.553  INFO 3148 --- [http-nio-8080-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-06-22 14:18:38.240  INFO 3148 --- [http-nio-8080-exec-3] com.forum.demo.Aspect.LoginAspect        : check login
+2019-06-22 14:19:07.719  INFO 3148 --- [http-nio-8080-exec-4] com.forum.demo.Aspect.LoginAspect        : check login
+2019-06-22 14:19:28.106  INFO 3148 --- [http-nio-8080-exec-5] com.forum.demo.Aspect.LoginAspect        : check login
+2019-06-22 14:21:39.680  INFO 6040 --- [main] com.forum.demo.ForumApplication          : Starting ForumApplication on FZUKingDuck with PID 6040 (F:\CODE\Forum\BackEnd\Forum\target\classes started by 叫猪学猪叫 in F:\CODE\Forum\BackEnd\Forum)
+2019-06-22 14:21:39.685  INFO 6040 --- [main] com.forum.demo.ForumApplication          : No active profile set, falling back to default profiles: default
+2019-06-22 14:21:40.830  INFO 6040 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-06-22 14:21:40.830  INFO 6040 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-22 14:21:41.017  INFO 6040 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 176ms. Found 17 repository interfaces.
+2019-06-22 14:21:41.040  INFO 6040 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-06-22 14:21:41.045  INFO 6040 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-22 14:21:41.071  INFO 6040 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ClassInfoDao.
+2019-06-22 14:21:41.072  INFO 6040 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ClassMemberDao.
+2019-06-22 14:21:41.073  INFO 6040 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ClassTaskDao.
+2019-06-22 14:21:41.074  INFO 6040 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.CustomDao.
+2019-06-22 14:21:41.075  INFO 6040 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.DownloadInfoDao.
+2019-06-22 14:21:41.076  INFO 6040 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ExamDao.
+2019-06-22 14:21:41.077  INFO 6040 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ExamInfoDao.
+2019-06-22 14:21:41.078  INFO 6040 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.FavoriteDao.
+2019-06-22 14:21:41.078  INFO 6040 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.FriendDao.
+2019-06-22 14:21:41.079  INFO 6040 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ImageInfoDao.
+2019-06-22 14:21:41.079  INFO 6040 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.PostsDao.
+2019-06-22 14:21:41.080  INFO 6040 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ReplyDao.
+2019-06-22 14:21:41.081  INFO 6040 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.TalkDao.
+2019-06-22 14:21:41.081  INFO 6040 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.TaskDao.
+2019-06-22 14:21:41.082  INFO 6040 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.TaskListDao.
+2019-06-22 14:21:41.083  INFO 6040 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.UserInfoDao.
+2019-06-22 14:21:41.084  INFO 6040 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.WatchedDao.
+2019-06-22 14:21:41.084  INFO 6040 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24ms. Found 0 repository interfaces.
+2019-06-22 14:21:41.525  INFO 6040 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c2ef755] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-22 14:21:41.882  INFO 6040 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-06-22 14:21:41.901  INFO 6040 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-06-22 14:21:41.901  INFO 6040 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-06-22 14:21:41.908  INFO 6040 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2019-06-22 14:21:41.908  INFO 6040 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-06-22 14:21:41.908  INFO 6040 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-06-22 14:21:41.913  INFO 6040 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2019-06-22 14:21:42.109  INFO 6040 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-06-22 14:21:42.110  INFO 6040 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2327 ms
+2019-06-22 14:21:42.286  INFO 6040 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-06-22 14:21:42.336  INFO 6040 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2019-06-22 14:21:42.337  INFO 6040 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-06-22 14:21:42.449  INFO 6040 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-06-22 14:21:42.588  INFO 6040 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-06-22 14:21:42.741  INFO 6040 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-06-22 14:21:42.750  INFO 6040 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-06-22 14:21:43.669  INFO 6040 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-06-22 14:21:44.695  INFO 6040 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-06-22 14:21:44.729  WARN 6040 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-06-22 14:21:45.189  INFO 6040 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-06-22 14:21:45.191  INFO 6040 --- [main] com.forum.demo.ForumApplication          : Started ForumApplication in 6.176 seconds (JVM running for 7.845)
+2019-06-22 14:21:45.450  INFO 6040 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-06-22 14:21:45.450  INFO 6040 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-06-22 14:21:45.465  INFO 6040 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 15 ms
+2019-06-22 14:21:45.554  INFO 6040 --- [http-nio-8080-exec-1] com.forum.demo.Aspect.LoginAspect        : check login
+2019-06-22 14:21:45.739  INFO 6040 --- [http-nio-8080-exec-1] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2019-06-22 14:21:45.741  INFO 6040 --- [http-nio-8080-exec-1] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2019-06-22 14:21:47.782  INFO 6040 --- [http-nio-8080-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-06-22 14:28:47.497  INFO 4444 --- [main] com.forum.demo.ForumApplication          : Starting ForumApplication on FZUKingDuck with PID 4444 (F:\CODE\Forum\BackEnd\Forum\target\classes started by 叫猪学猪叫 in F:\CODE\Forum\BackEnd\Forum)
+2019-06-22 14:28:47.501  INFO 4444 --- [main] com.forum.demo.ForumApplication          : No active profile set, falling back to default profiles: default
+2019-06-22 14:28:48.423  INFO 4444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-06-22 14:28:48.424  INFO 4444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-22 14:28:48.544  INFO 4444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 111ms. Found 17 repository interfaces.
+2019-06-22 14:28:48.559  INFO 4444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-06-22 14:28:48.560  INFO 4444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-22 14:28:48.576  INFO 4444 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ClassInfoDao.
+2019-06-22 14:28:48.576  INFO 4444 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ClassMemberDao.
+2019-06-22 14:28:48.577  INFO 4444 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ClassTaskDao.
+2019-06-22 14:28:48.577  INFO 4444 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.CustomDao.
+2019-06-22 14:28:48.577  INFO 4444 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.DownloadInfoDao.
+2019-06-22 14:28:48.578  INFO 4444 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ExamDao.
+2019-06-22 14:28:48.578  INFO 4444 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ExamInfoDao.
+2019-06-22 14:28:48.578  INFO 4444 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.FavoriteDao.
+2019-06-22 14:28:48.579  INFO 4444 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.FriendDao.
+2019-06-22 14:28:48.580  INFO 4444 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ImageInfoDao.
+2019-06-22 14:28:48.580  INFO 4444 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.PostsDao.
+2019-06-22 14:28:48.580  INFO 4444 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ReplyDao.
+2019-06-22 14:28:48.580  INFO 4444 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.TalkDao.
+2019-06-22 14:28:48.581  INFO 4444 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.TaskDao.
+2019-06-22 14:28:48.582  INFO 4444 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.TaskListDao.
+2019-06-22 14:28:48.582  INFO 4444 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.UserInfoDao.
+2019-06-22 14:28:48.583  INFO 4444 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.WatchedDao.
+2019-06-22 14:28:48.583  INFO 4444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15ms. Found 0 repository interfaces.
+2019-06-22 14:28:48.965  INFO 4444 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$39fcb39d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-22 14:28:49.316  INFO 4444 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-06-22 14:28:49.340  INFO 4444 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-06-22 14:28:49.340  INFO 4444 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-06-22 14:28:49.346  INFO 4444 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2019-06-22 14:28:49.346  INFO 4444 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-06-22 14:28:49.347  INFO 4444 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-06-22 14:28:49.351  INFO 4444 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2019-06-22 14:28:49.462  INFO 4444 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-06-22 14:28:49.462  INFO 4444 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1911 ms
+2019-06-22 14:28:49.753  INFO 4444 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-06-22 14:28:49.806  INFO 4444 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2019-06-22 14:28:49.807  INFO 4444 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-06-22 14:28:49.920  INFO 4444 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-06-22 14:28:50.035  INFO 4444 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-06-22 14:28:50.177  INFO 4444 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-06-22 14:28:50.186  INFO 4444 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-06-22 14:28:51.000  INFO 4444 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-06-22 14:28:52.008  INFO 4444 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-06-22 14:28:52.043  WARN 4444 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-06-22 14:28:52.506  INFO 4444 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-06-22 14:28:52.507  INFO 4444 --- [main] com.forum.demo.ForumApplication          : Started ForumApplication in 5.485 seconds (JVM running for 7.306)
+2019-06-22 14:29:55.151  INFO 23980 --- [main] com.forum.demo.ForumApplication          : Starting ForumApplication on FZUKingDuck with PID 23980 (F:\CODE\Forum\BackEnd\Forum\target\classes started by 叫猪学猪叫 in F:\CODE\Forum\BackEnd\Forum)
+2019-06-22 14:29:55.157  INFO 23980 --- [main] com.forum.demo.ForumApplication          : No active profile set, falling back to default profiles: default
+2019-06-22 14:29:56.281  INFO 23980 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-06-22 14:29:56.281  INFO 23980 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-22 14:29:56.424  INFO 23980 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 129ms. Found 17 repository interfaces.
+2019-06-22 14:29:56.441  INFO 23980 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-06-22 14:29:56.442  INFO 23980 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-22 14:29:56.462  INFO 23980 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ClassInfoDao.
+2019-06-22 14:29:56.463  INFO 23980 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ClassMemberDao.
+2019-06-22 14:29:56.463  INFO 23980 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ClassTaskDao.
+2019-06-22 14:29:56.463  INFO 23980 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.CustomDao.
+2019-06-22 14:29:56.464  INFO 23980 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.DownloadInfoDao.
+2019-06-22 14:29:56.465  INFO 23980 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ExamDao.
+2019-06-22 14:29:56.465  INFO 23980 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ExamInfoDao.
+2019-06-22 14:29:56.466  INFO 23980 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.FavoriteDao.
+2019-06-22 14:29:56.467  INFO 23980 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.FriendDao.
+2019-06-22 14:29:56.468  INFO 23980 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ImageInfoDao.
+2019-06-22 14:29:56.469  INFO 23980 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.PostsDao.
+2019-06-22 14:29:56.470  INFO 23980 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ReplyDao.
+2019-06-22 14:29:56.471  INFO 23980 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.TalkDao.
+2019-06-22 14:29:56.471  INFO 23980 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.TaskDao.
+2019-06-22 14:29:56.472  INFO 23980 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.TaskListDao.
+2019-06-22 14:29:56.473  INFO 23980 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.UserInfoDao.
+2019-06-22 14:29:56.474  INFO 23980 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.WatchedDao.
+2019-06-22 14:29:56.474  INFO 23980 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22ms. Found 0 repository interfaces.
+2019-06-22 14:29:56.946  INFO 23980 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$187442d0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-22 14:29:57.426  INFO 23980 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-06-22 14:29:57.447  INFO 23980 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-06-22 14:29:57.448  INFO 23980 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-06-22 14:29:57.454  INFO 23980 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2019-06-22 14:29:57.454  INFO 23980 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-06-22 14:29:57.454  INFO 23980 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-06-22 14:29:57.458  INFO 23980 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2019-06-22 14:29:57.611  INFO 23980 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-06-22 14:29:57.611  INFO 23980 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2412 ms
+2019-06-22 14:29:57.892  INFO 23980 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-06-22 14:29:57.944  INFO 23980 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2019-06-22 14:29:57.945  INFO 23980 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-06-22 14:29:58.056  INFO 23980 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-06-22 14:29:58.265  INFO 23980 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-06-22 14:29:58.454  INFO 23980 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-06-22 14:29:58.463  INFO 23980 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-06-22 14:29:59.372  INFO 23980 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-06-22 14:30:00.473  INFO 23980 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-06-22 14:30:00.511  WARN 23980 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-06-22 14:30:00.987  INFO 23980 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-06-22 14:30:00.988  INFO 23980 --- [main] com.forum.demo.ForumApplication          : Started ForumApplication in 6.399 seconds (JVM running for 8.141)
+2019-06-22 14:30:39.924  INFO 23980 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-06-22 14:30:39.924  INFO 23980 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-06-22 14:30:39.938  INFO 23980 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2019-06-22 14:30:40.052  INFO 23980 --- [http-nio-8080-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-06-22 14:32:22.159  INFO 22852 --- [main] com.forum.demo.ForumApplicationTests     : Starting ForumApplicationTests on FZUKingDuck with PID 22852 (started by ����ѧ���� in F:\CODE\Forum\BackEnd\Forum)
+2019-06-22 14:32:22.161  INFO 22852 --- [main] com.forum.demo.ForumApplicationTests     : No active profile set, falling back to default profiles: default
+2019-06-22 14:32:23.221  INFO 22852 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-06-22 14:32:23.225  INFO 22852 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-22 14:32:23.554  INFO 22852 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 319ms. Found 17 repository interfaces.
+2019-06-22 14:32:23.583  INFO 22852 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-06-22 14:32:23.586  INFO 22852 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-22 14:32:23.622  INFO 22852 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ClassInfoDao.
+2019-06-22 14:32:23.623  INFO 22852 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ClassMemberDao.
+2019-06-22 14:32:23.624  INFO 22852 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ClassTaskDao.
+2019-06-22 14:32:23.626  INFO 22852 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.CustomDao.
+2019-06-22 14:32:23.627  INFO 22852 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.DownloadInfoDao.
+2019-06-22 14:32:23.627  INFO 22852 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ExamDao.
+2019-06-22 14:32:23.628  INFO 22852 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ExamInfoDao.
+2019-06-22 14:32:23.629  INFO 22852 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.FavoriteDao.
+2019-06-22 14:32:23.629  INFO 22852 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.FriendDao.
+2019-06-22 14:32:23.630  INFO 22852 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ImageInfoDao.
+2019-06-22 14:32:23.631  INFO 22852 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.PostsDao.
+2019-06-22 14:32:23.632  INFO 22852 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.ReplyDao.
+2019-06-22 14:32:23.633  INFO 22852 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.TalkDao.
+2019-06-22 14:32:23.633  INFO 22852 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.TaskDao.
+2019-06-22 14:32:23.634  INFO 22852 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.TaskListDao.
+2019-06-22 14:32:23.636  INFO 22852 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.UserInfoDao.
+2019-06-22 14:32:23.638  INFO 22852 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.forum.demo.DAO.WatchedDao.
+2019-06-22 14:32:23.639  INFO 22852 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33ms. Found 0 repository interfaces.
+2019-06-22 14:32:24.221  INFO 22852 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1a67f934] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
